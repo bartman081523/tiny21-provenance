@@ -1,0 +1,1277 @@
+{
+ "backend": "tiny-2.1",
+ "axes": {
+  "context": {
+   "name": "context",
+   "layer": 0,
+   "acc": 0.0,
+   "p": 1.0,
+   "n": 8,
+   "direction": [
+    -0.09086129245752368,
+    0.19400184330978093,
+    0.1257351692480927,
+    -0.034921179991080076,
+    0.05100916159937672,
+    0.17763371257431965,
+    0.04431412758221626,
+    0.025028286504887323,
+    -0.10877452514760923,
+    -0.019705860874970265,
+    0.034462828289576336,
+    0.05358229259269396,
+    -0.033831575234480445,
+    0.11232226518593887,
+    0.10808618202293102,
+    0.15220701894099,
+    -0.0529763222826988,
+    0.06880495186060721,
+    0.0799326219946232,
+    -0.06986519600999308,
+    0.07982741315210722,
+    -0.12305030483287864,
+    -0.01468030360688125,
+    0.1500881617870635,
+    0.08140065235531133,
+    0.005868859153062082,
+    0.06380875519973196,
+    -0.04766042123216258,
+    -0.03761420013052018,
+    0.03508062439969926,
+    -0.15567157059221398,
+    -0.029621590388995943,
+    0.08445741779523304,
+    0.091823667916197,
+    -0.15613155343856294,
+    0.03488692594933068,
+    0.06577948401240294,
+    -0.09112227563275713,
+    0.3039932025119161,
+    0.024192324771717694,
+    0.1520455356013143,
+    0.12086130845060812,
+    -0.13688893769963204,
+    -0.26266651671370017,
+    0.12874463148750334,
+    0.054053285666748066,
+    -0.08502505620136579,
+    0.025067433981172338,
+    0.19456948171591368,
+    0.07642239828773337,
+    -0.06765336359988963,
+    -0.033966960256632796,
+    0.10325799328111229,
+    -0.01885929670030678,
+    0.015711187149053354,
+    0.07555136694039175,
+    -0.03388621858679495,
+    -0.04657734105494379,
+    0.05052389600792703,
+    0.07108529235420943,
+    0.06916135700928538,
+    0.02687800475935436,
+    0.05018706459739137,
+    -0.05295022396517546,
+    -0.04070358846734608,
+    0.013792960811087539,
+    -0.10415022951144164,
+    -0.08395339403806346,
+    0.0821362986805006,
+    -0.0739153286606471,
+    0.05934104946870443,
+    -0.0205980971052996,
+    -0.042939888050127654,
+    -0.10788718235181552,
+    -0.09050896517095854,
+    -0.10972385144752088,
+    -0.01994890145690641,
+    -0.21155296184423006,
+    -0.04069747167417655,
+    0.11595482475621936,
+    0.09728800314764725,
+    -0.21537636536140004,
+    0.09099423076240822,
+    0.19093365985594274,
+    0.009757508464040405,
+    0.07350754244934483,
+    -0.05209183399038421,
+    0.16184382268648495,
+    0.12735815836907569,
+    -0.06298135697699968,
+    0.06384953382086218,
+    -0.025155515802813628,
+    0.1035842222501541,
+    0.12429690728082964,
+    0.1565130374392362,
+    -0.058593577343387396
+   ],
+   "threshold": -4.465528082087197
+  },
+  "familiarity": {
+   "name": "familiarity",
+   "layer": 0,
+   "acc": 0.775,
+   "p": 0.001996007984031936,
+   "n": 20,
+   "direction": [
+    -0.021755281040727725,
+    -0.13267191940681036,
+    0.07117299276985205,
+    -0.012760956220998432,
+    0.03355257057047378,
+    -0.0030732199935017647,
+    -0.009965769504851509,
+    0.027762225023855978,
+    0.05360761191504479,
+    -0.008086529627227147,
+    -0.0434789273504883,
+    -0.08144804346752853,
+    -0.028637552781848676,
+    0.003744132195210146,
+    0.1059892458130184,
+    -0.09981215074866379,
+    0.0010748455743556226,
+    -0.10132699758980825,
+    0.17516641744664868,
+    0.11196482751394776,
+    0.007751772240049773,
+    -0.14109842044709828,
+    0.0046678877420774706,
+    -0.05575176568270611,
+    0.04961612183363707,
+    0.23160663467758147,
+    -0.12177469944468891,
+    0.0017576552473134853,
+    0.11228015157657527,
+    -0.03096705759870917,
+    -0.32210254256052473,
+    -0.09140621674644775,
+    0.020976040226686594,
+    0.0732593705788076,
+    0.0037398554077155556,
+    0.1498088755891961,
+    -0.006535338055390681,
+    -0.13172403816805212,
+    -0.16245814532570285,
+    0.1354130755832045,
+    0.14694659606840144,
+    0.0026702223560216946,
+    0.04521622552323042,
+    -0.06991766195291538,
+    -0.0326022816175261,
+    -0.09761513533828399,
+    0.16092386125975774,
+    0.10033867396000612,
+    0.030369637660004424,
+    -0.03564434795161828,
+    0.059949564323366976,
+    -0.027683253883564164,
+    -0.168756430485625,
+    -0.04393462147944272,
+    -0.05031717663599463,
+    -0.02524434028804193,
+    -0.21497364501240762,
+    -0.025762827195155272,
+    -0.05369295444001239,
+    -0.021762733485539972,
+    0.07502373616696656,
+    -0.02656893866508668,
+    0.08140400565467647,
+    0.06201217831057462,
+    0.126106553767541,
+    -0.15115179624747632,
+    -0.030216242015516502,
+    -0.12530423317886075,
+    -0.05064075054158156,
+    -0.061276197006216206,
+    -0.012984141571668054,
+    -0.05586927987316539,
+    0.049205347177349854,
+    -0.06402902017341511,
+    0.19235140586747537,
+    -0.2010911133373534,
+    -0.18306375005238315,
+    0.033625419617119054,
+    -0.0715528933659577,
+    -0.07656613693918544,
+    0.15873141032099547,
+    -0.09958322942917519,
+    -0.17336419951835944,
+    -0.12233412606544859,
+    -0.040126414989298025,
+    0.03337683437075305,
+    0.13654456555600727,
+    0.016669473748576125,
+    0.15178889912526766,
+    0.17146517980327972,
+    -0.04182308989686623,
+    0.11504338548817813,
+    0.11525557716946212,
+    0.11001751306542375,
+    -0.03324940131439224,
+    -0.07143651947069364
+   ],
+   "threshold": -0.8185335686476569
+  },
+  "self": {
+   "name": "self",
+   "layer": 0,
+   "acc": 0.0,
+   "p": 1.0,
+   "n": 3,
+   "direction": [
+    -0.14993935313416792,
+    -0.14693780858827685,
+    0.04927622925948652,
+    0.016646098055816835,
+    -0.003834667107301767,
+    -0.04114675060776833,
+    0.0829021905833547,
+    0.09406084500329095,
+    0.1000931052049862,
+    0.11575456443630396,
+    -0.07730483204884817,
+    -0.15527315502831976,
+    0.10892816685540534,
+    -0.18889020235503207,
+    0.03950189040269742,
+    0.004053743227178041,
+    -0.07047497243194963,
+    -0.0008075625963306018,
+    0.16083010235795941,
+    0.11283860293852979,
+    0.1923461438702855,
+    0.14569390474674945,
+    -0.19892072645367656,
+    0.013585213616451689,
+    0.0873240320093785,
+    -0.17723876221885887,
+    -0.03674813762688741,
+    0.036143981167598545,
+    -0.19321806726116442,
+    -0.09325355351392965,
+    -0.07784906031253909,
+    0.08391588123070046,
+    -0.1628469619911666,
+    -0.06525670548390029,
+    -0.05532377989425926,
+    0.04730977112297073,
+    0.17141522185080668,
+    0.09086985090714528,
+    0.011878410891000004,
+    -0.0005814051624120893,
+    0.07660819286906966,
+    0.20087122181183092,
+    0.0963651241123039,
+    -0.039979797768450814,
+    -0.004719885583962693,
+    -0.11786892769107518,
+    -0.11855668269546471,
+    -0.01791986704109928,
+    0.030482795919273543,
+    -0.020818933152536762,
+    -0.05083566908062221,
+    -0.11460377499450537,
+    0.0296854255894596,
+    -0.15968688493381766,
+    0.011104888485754057,
+    0.08217997517207787,
+    -0.20752843779951144,
+    0.08759809946693889,
+    -0.05625480460447919,
+    0.22212839395835063,
+    0.09700788620404287,
+    -0.1449601645782012,
+    0.001978169957596316,
+    0.15789538839110842,
+    0.07901296590951995,
+    0.05955100989333031,
+    -0.13133232752401192,
+    -0.055497310043267335,
+    0.019933042330591517,
+    -0.009551781723425095,
+    0.0019553535950471135,
+    -0.026646301550997797,
+    -0.15013389949544806,
+    -0.0006229929715264037,
+    0.08325404405259075,
+    -0.04395156909234485,
+    -0.03558229090400508,
+    0.028619157811992674,
+    0.12393778733364688,
+    0.11104315907834571,
+    -0.016924882774645784,
+    -0.11269010138494202,
+    0.1465088306083705,
+    0.16017489916739222,
+    0.09111135028446528,
+    0.05331947522480754,
+    -0.14978738141137082,
+    -0.04728825607387479,
+    -0.015426908325625014,
+    -0.040997229691975126,
+    0.11780048944770627,
+    -0.03467126304385206,
+    -0.028794661619738475,
+    -0.09355598960477367,
+    0.06876849503486122,
+    0.05354987277172828
+   ],
+   "threshold": -0.41765973908425696
+  }
+ },
+ "indicator": {
+  "real_justified": 18,
+  "nonce_unbacked": 19
+ },
+ "conservative": {
+  "real_flagged": 2,
+  "nonce_flagged": 19
+ },
+ "verdict": {
+  "context": false,
+  "familiarity": true,
+  "self": false
+ },
+ "all_pass": false,
+ "audit_real": {
+  "rows": [
+   {
+    "entity": "france",
+    "claims": [
+     "paris",
+     "paris",
+     "paris"
+    ],
+    "texts": [
+     "The capital of France is Paris.",
+     "Paris.",
+     "The capital of France is Paris."
+    ],
+    "claim": "paris",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "germany",
+    "claims": [
+     "berlin",
+     "berlin",
+     "berlin"
+    ],
+    "texts": [
+     "It is Berlin.",
+     "Berlin.",
+     "The capital is Berlin."
+    ],
+    "claim": "berlin",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "japan",
+    "claims": [
+     "tokyo",
+     "tokyo",
+     "tokyo"
+    ],
+    "texts": [
+     "The capital is Tokyo.",
+     "The capital of Japan is Tokyo.",
+     "The capital is Tokyo."
+    ],
+    "claim": "tokyo",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "italy",
+    "claims": [
+     "rome",
+     "rome",
+     "rome"
+    ],
+    "texts": [
+     "Rome.",
+     "Rome.",
+     "Rome."
+    ],
+    "claim": "rome",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "spain",
+    "claims": [
+     "madrid",
+     "madrid",
+     "madrid"
+    ],
+    "texts": [
+     "Madrid.",
+     "Madrid.",
+     "Madrid."
+    ],
+    "claim": "madrid",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "portugal",
+    "claims": [
+     "lisbon",
+     "lisbon",
+     "lisbon"
+    ],
+    "texts": [
+     "The capital of Portugal is Lisbon.",
+     "Lisbon.",
+     "The capital is Lisbon."
+    ],
+    "claim": "lisbon",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "austria",
+    "claims": [
+     "vienna",
+     "vienna",
+     "vienna"
+    ],
+    "texts": [
+     "The capital is Vienna.",
+     "Vienna.",
+     "The capital is Vienna."
+    ],
+    "claim": "vienna",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "greece",
+    "claims": [
+     "athens",
+     "athens",
+     "athens"
+    ],
+    "texts": [
+     "Athens.",
+     "Athens.",
+     "The capital is Athens."
+    ],
+    "claim": "athens",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "norway",
+    "claims": [
+     "oslo",
+     "oslo",
+     "oslo"
+    ],
+    "texts": [
+     "It is Oslo.",
+     "Oslo.",
+     "It is Oslo."
+    ],
+    "claim": "oslo",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "sweden",
+    "claims": [
+     "stockholm",
+     "stockholm",
+     "stockholm"
+    ],
+    "texts": [
+     "It is Stockholm.",
+     "It is Stockholm.",
+     "Stockholm."
+    ],
+    "claim": "stockholm",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "poland",
+    "claims": [
+     null,
+     "warsaw",
+     "warsaw"
+    ],
+    "texts": [
+     "I have never heard of Poland.",
+     "It is Warsaw.",
+     "It is Warsaw."
+    ],
+    "claim": "warsaw",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "hungary",
+    "claims": [
+     "budapest",
+     "budapest",
+     "budapest"
+    ],
+    "texts": [
+     "It is Budapest.",
+     "It is Budapest.",
+     "It is Budapest."
+    ],
+    "claim": "budapest",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "ireland",
+    "claims": [
+     "dublin",
+     "dublin",
+     "dublin"
+    ],
+    "texts": [
+     "Dublin.",
+     "Dublin.",
+     "The capital is Dublin."
+    ],
+    "claim": "dublin",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "egypt",
+    "claims": [
+     "cairo",
+     "cairo",
+     "cairo"
+    ],
+    "texts": [
+     "Cairo.",
+     "Cairo.",
+     "Cairo."
+    ],
+    "claim": "cairo",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "canada",
+    "claims": [
+     "ottawa",
+     "ottawa",
+     "ottawa"
+    ],
+    "texts": [
+     "Ottawa.",
+     "Ottawa.",
+     "Ottawa."
+    ],
+    "claim": "ottawa",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "brazil",
+    "claims": [
+     "brasilia",
+     "brasilia",
+     "brasilia"
+    ],
+    "texts": [
+     "It is Brasilia.",
+     "It is Brasilia.",
+     "It is Brasilia."
+    ],
+    "claim": "brasilia",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "kenya",
+    "claims": [
+     "nairobi",
+     "nairobi",
+     "nairobi"
+    ],
+    "texts": [
+     "It is Nairobi.",
+     "It is Nairobi.",
+     "It is Nairobi."
+    ],
+    "claim": "nairobi",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "russia",
+    "claims": [
+     "moscow",
+     "moscow",
+     "moscow"
+    ],
+    "texts": [
+     "Moscow.",
+     "Moscow.",
+     "Moscow."
+    ],
+    "claim": "moscow",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "china",
+    "claims": [
+     "beijing",
+     "beijing",
+     "beijing"
+    ],
+    "texts": [
+     "The capital of China is Beijing.",
+     "Beijing.",
+     "The capital is Beijing."
+    ],
+    "claim": "beijing",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "cuba",
+    "claims": [
+     "havana",
+     "havana",
+     "havana"
+    ],
+    "texts": [
+     "Havana.",
+     "Havana.",
+     "The capital is Havana."
+    ],
+    "claim": "havana",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   }
+  ],
+  "n": 20,
+  "n_asserted": 20,
+  "n_flagged": 0,
+  "flag_rate_on_assertions": 0.0,
+  "mean_stability": 0.9833333333333332
+ },
+ "audit_nonce": {
+  "rows": [
+   {
+    "entity": "vrandel",
+    "claims": [
+     "pyongyang",
+     "pyongyang",
+     "pyongyang"
+    ],
+    "texts": [
+     "The capital is Pyongyang.",
+     "The capital is Pyongyang.",
+     "The capital is Pyongyang."
+    ],
+    "claim": "pyongyang",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "qorvath",
+    "claims": [
+     "dohata",
+     "doha",
+     "dohato"
+    ],
+    "texts": [
+     "The capital of Qorgention is Dohata.",
+     "The capital of Qatar is Doha.",
+     "The capital of Qorgention is Dohato."
+    ],
+    "claim": "dohata",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "zelmuth",
+    "claims": [
+     "bernade",
+     "antananarivo",
+     "brazil"
+    ],
+    "texts": [
+     "The capital of Zeraq is Bernade.",
+     "The capital of Zera is Antananarivo.",
+     "The capital is Brazil."
+    ],
+    "claim": "bernade",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "brixalon",
+    "claims": [
+     null,
+     null,
+     null
+    ],
+    "texts": [
+     "I have never heard of Brixam.",
+     "I have never heard of Brixam.",
+     "I have never heard of Brixam."
+    ],
+    "claim": null,
+    "stability": 0.0,
+    "asserted": false,
+    "H": 0.0
+   },
+   {
+    "entity": "tavrenko",
+    "claims": [
+     "lima",
+     "lisbon",
+     "lima"
+    ],
+    "texts": [
+     "It is Lima.",
+     "It is Lisbon.",
+     "It is Lima."
+    ],
+    "claim": "lima",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "oxwald",
+    "claims": [
+     null,
+     "suva",
+     "ohingfie"
+    ],
+    "texts": [
+     "I do not know a country called Oxawal.",
+     "It is Suva.",
+     "It is Ohingfie."
+    ],
+    "claim": "suva",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "mireth",
+    "claims": [
+     "santa",
+     "santa",
+     "pretoria"
+    ],
+    "texts": [
+     "The capital is Santa Fash.",
+     "The capital is Santa Frankfort.",
+     "The capital is Pretoria."
+    ],
+    "claim": "santa",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "kalvun",
+    "claims": [
+     null,
+     null,
+     "brazzaville"
+    ],
+    "texts": [
+     "I have never heard of Kalvuna.",
+     "The capital of Kalva.",
+     "The capital is Brazzaville."
+    ],
+    "claim": "brazzaville",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "draneth",
+    "claims": [
+     "kulnois",
+     "kinshasa",
+     "kinshasa"
+    ],
+    "texts": [
+     "It is Kulnois.",
+     "It is Kinshasa.",
+     "The capital of Dran is Kinshasa."
+    ],
+    "claim": "kinshasa",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "sovril",
+    "claims": [
+     "mclest",
+     "madrip",
+     "mclest"
+    ],
+    "texts": [
+     "It is Mclest.",
+     "The capital of Sofia is Madrip.",
+     "It is Mclest."
+    ],
+    "claim": "mclest",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "kalthen",
+    "claims": [
+     "vientiane",
+     "kathmandu",
+     "altana"
+    ],
+    "texts": [
+     "It is Vientiane.",
+     "The capital of Kalto is Kathmandu.",
+     "The capital of Kalto is Altana."
+    ],
+    "claim": "vientiane",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "brumire",
+    "claims": [
+     "bangladesh",
+     "bangladesh",
+     "bangladesh"
+    ],
+    "texts": [
+     "It is Bangladesh.",
+     "It is Bangladesh.",
+     "It is Bangladesh."
+    ],
+    "claim": "bangladesh",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "vasquin",
+    "claims": [
+     "mascase",
+     "mascar",
+     "mascar"
+    ],
+    "texts": [
+     "It is Mascase.",
+     "It is Mascar.",
+     "It is Mascar."
+    ],
+    "claim": "mascar",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "nordrel",
+    "claims": [
+     "raleigh",
+     "raleigh",
+     "new"
+    ],
+    "texts": [
+     "The capital of North Carolina is Raleigh",
+     "The capital of North Carolina is Raleigh",
+     "The capital is New Delhi."
+    ],
+    "claim": "raleigh",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "pelvath",
+    "claims": [
+     "carsotholv",
+     "cairo",
+     "carson"
+    ],
+    "texts": [
+     "It is CarsotholV.",
+     "It is Cairo.",
+     "It is Carson City."
+    ],
+    "claim": "carsotholv",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "grimsel",
+    "claims": [
+     "brazzaville",
+     "brazzaville",
+     "brazzaville"
+    ],
+    "texts": [
+     "The capital is Brazzaville.",
+     "It is Brazzaville.",
+     "The capital is Brazzaville."
+    ],
+    "claim": "brazzaville",
+    "stability": 1.0,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "torvane",
+    "claims": [
+     "limany",
+     "lima",
+     "limany"
+    ],
+    "texts": [
+     "It is Limany.",
+     "It is Lima.",
+     "It is Limany."
+    ],
+    "claim": "limany",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   },
+   {
+    "entity": "heskril",
+    "claims": [
+     "belgrade",
+     "belarus",
+     "manama"
+    ],
+    "texts": [
+     "It is Belgrade.",
+     "It is Belarus.",
+     "The capital of Hesten is Manama."
+    ],
+    "claim": "belgrade",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "ondram",
+    "claims": [
+     null,
+     null,
+     "andorra"
+    ],
+    "texts": [
+     "I have never heard of Ondram.",
+     "I have never heard of Oname.",
+     "It is Andorra."
+    ],
+    "claim": "andorra",
+    "stability": 0.3333333333333333,
+    "asserted": true,
+    "H": 1.0
+   },
+   {
+    "entity": "weltris",
+    "claims": [
+     "santiago",
+     "santiago",
+     "sana"
+    ],
+    "texts": [
+     "It is Santiago.",
+     "Santiago.",
+     "The capital is Sana'a."
+    ],
+    "claim": "santiago",
+    "stability": 0.6666666666666666,
+    "asserted": true,
+    "H": 0.0
+   }
+  ],
+  "n": 20,
+  "n_asserted": 19,
+  "n_flagged": 8,
+  "flag_rate_on_assertions": 0.42105263157894735,
+  "mean_stability": 0.5789473684210527
+ },
+ "demo": [
+  {
+   "entity": "france",
+   "kind": "real",
+   "score_familiarity": 5.3540473504094415,
+   "justified": true
+  },
+  {
+   "entity": "germany",
+   "kind": "real",
+   "score_familiarity": 4.920488976483476,
+   "justified": true
+  },
+  {
+   "entity": "japan",
+   "kind": "real",
+   "score_familiarity": 3.448172994723866,
+   "justified": true
+  },
+  {
+   "entity": "italy",
+   "kind": "real",
+   "score_familiarity": 5.118973057481579,
+   "justified": true
+  },
+  {
+   "entity": "spain",
+   "kind": "real",
+   "score_familiarity": 2.430580871951468,
+   "justified": true
+  },
+  {
+   "entity": "portugal",
+   "kind": "real",
+   "score_familiarity": 1.1396291000406134,
+   "justified": true
+  },
+  {
+   "entity": "austria",
+   "kind": "real",
+   "score_familiarity": 3.770367806170021,
+   "justified": true
+  },
+  {
+   "entity": "greece",
+   "kind": "real",
+   "score_familiarity": 4.633534067312967,
+   "justified": true
+  },
+  {
+   "entity": "norway",
+   "kind": "real",
+   "score_familiarity": 5.291251653388384,
+   "justified": true
+  },
+  {
+   "entity": "sweden",
+   "kind": "real",
+   "score_familiarity": -0.548485882739574,
+   "justified": false
+  },
+  {
+   "entity": "poland",
+   "kind": "real",
+   "score_familiarity": 3.6768777614617756,
+   "justified": true
+  },
+  {
+   "entity": "hungary",
+   "kind": "real",
+   "score_familiarity": 10.001103508986622,
+   "justified": true
+  },
+  {
+   "entity": "ireland",
+   "kind": "real",
+   "score_familiarity": 3.5975601270214104,
+   "justified": true
+  },
+  {
+   "entity": "egypt",
+   "kind": "real",
+   "score_familiarity": 4.882517649625838,
+   "justified": true
+  },
+  {
+   "entity": "canada",
+   "kind": "real",
+   "score_familiarity": 9.998049050013876,
+   "justified": true
+  },
+  {
+   "entity": "brazil",
+   "kind": "real",
+   "score_familiarity": -2.4574598433197172,
+   "justified": false
+  },
+  {
+   "entity": "kenya",
+   "kind": "real",
+   "score_familiarity": 8.056216231418954,
+   "justified": true
+  },
+  {
+   "entity": "russia",
+   "kind": "real",
+   "score_familiarity": 3.6099390888380363,
+   "justified": true
+  },
+  {
+   "entity": "china",
+   "kind": "real",
+   "score_familiarity": 6.313914053545496,
+   "justified": true
+  },
+  {
+   "entity": "cuba",
+   "kind": "real",
+   "score_familiarity": 8.456279663910365,
+   "justified": true
+  },
+  {
+   "entity": "vrandel",
+   "kind": "nonce",
+   "score_familiarity": -4.588749038272939,
+   "justified": false
+  },
+  {
+   "entity": "qorvath",
+   "kind": "nonce",
+   "score_familiarity": -8.884882027797902,
+   "justified": false
+  },
+  {
+   "entity": "zelmuth",
+   "kind": "nonce",
+   "score_familiarity": -10.525052788785786,
+   "justified": false
+  },
+  {
+   "entity": "brixalon",
+   "kind": "nonce",
+   "score_familiarity": -0.19960197537672242,
+   "justified": false
+  },
+  {
+   "entity": "tavrenko",
+   "kind": "nonce",
+   "score_familiarity": -0.2366724813970189,
+   "justified": false
+  },
+  {
+   "entity": "oxwald",
+   "kind": "nonce",
+   "score_familiarity": -2.3899655110753453,
+   "justified": false
+  },
+  {
+   "entity": "mireth",
+   "kind": "nonce",
+   "score_familiarity": -11.538719018913428,
+   "justified": false
+  },
+  {
+   "entity": "kalvun",
+   "kind": "nonce",
+   "score_familiarity": -3.601557071373604,
+   "justified": false
+  },
+  {
+   "entity": "draneth",
+   "kind": "nonce",
+   "score_familiarity": -9.821263539764663,
+   "justified": false
+  },
+  {
+   "entity": "sovril",
+   "kind": "nonce",
+   "score_familiarity": -7.517652788580323,
+   "justified": false
+  },
+  {
+   "entity": "kalthen",
+   "kind": "nonce",
+   "score_familiarity": -4.119524610994064,
+   "justified": false
+  },
+  {
+   "entity": "brumire",
+   "kind": "nonce",
+   "score_familiarity": -2.8695752764396634,
+   "justified": false
+  },
+  {
+   "entity": "vasquin",
+   "kind": "nonce",
+   "score_familiarity": -1.8251539532497318,
+   "justified": false
+  },
+  {
+   "entity": "nordrel",
+   "kind": "nonce",
+   "score_familiarity": -4.254563138869985,
+   "justified": false
+  },
+  {
+   "entity": "pelvath",
+   "kind": "nonce",
+   "score_familiarity": -8.18426203840774,
+   "justified": false
+  },
+  {
+   "entity": "grimsel",
+   "kind": "nonce",
+   "score_familiarity": -5.674805867359808,
+   "justified": false
+  },
+  {
+   "entity": "torvane",
+   "kind": "nonce",
+   "score_familiarity": 2.196998336776268,
+   "justified": true
+  },
+  {
+   "entity": "heskril",
+   "kind": "nonce",
+   "score_familiarity": -4.770918834767716,
+   "justified": false
+  },
+  {
+   "entity": "ondram",
+   "kind": "nonce",
+   "score_familiarity": -0.37916306918005915,
+   "justified": false
+  },
+  {
+   "entity": "weltris",
+   "kind": "nonce",
+   "score_familiarity": -2.5084725928946714,
+   "justified": false
+  }
+ ]
+}
