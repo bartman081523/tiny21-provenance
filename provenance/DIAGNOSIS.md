@@ -152,5 +152,5 @@ myanmar   Naypyidaw-> Nayingfield
 
 A full retrain with the canonical format (or a longer, lower-LR finetune) is
 the production path; until then the router is the cheaper fix and is what the
-build ships. `canon.pt` is reproducible with
-`python3 training/train_canon.py 5 canon.pt` and is not committed.
+build ships. `training/canon.pt` is committed as the experiment artifact (1.4 MB) and
+is reproducible with `python3 training/train_canon.py 5 canon.pt`.
