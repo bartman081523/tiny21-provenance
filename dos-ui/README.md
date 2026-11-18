@@ -77,3 +77,32 @@ familiar > 0: 18/20        novel < 0: 19/20
 The readout is **coverage**, not truth: a memorised wrong capital would score
 `familiar`. The axis is lexical (layer 0): it reads "known name", not "known
 fact". Both are documented in the top-level report.
+
+## Rendering verification
+
+The first Watcom build showed graphical errors: the chat lines overwrote each
+other and the panel labels sat one or two rows off. Cause: **Turbo C's text
+coordinates are window-relative**, and `TINY.C` relies on it (`chat_win()`
+sets `window(CHAT_L, CHAT_T, CHAT_R, CHAT_B)` and continues in window
+coordinates; `chat_room()` scrolls inside it). The compat layer used absolute
+coordinates, so every `gotoxy` inside a window landed at the wrong cell.
+
+Fix: `gotoxy(x,y)` maps to `wx1+x-1, wy1+y-1`, `wherex()/wherey()` return
+window-relative values. Rebuild, then verify cell by cell with the program's
+own `/dump` mode:
+
+```
+BOOT.DMP   char-diff 0/2000   attr-diff 0/2000   (vs the Turbo C build)
+SCREEN.DMP 63 chars / 43 attrs -- clock, rand() answer wording, speed,
+                                  and the new PROVENANCE panel
+```
+
+The boot screen is bit-identical; the only structural difference on the chat
+screen is the panel. A 40-question regression still gives the same 40 answers.
+
+### Dead zone
+
+Near the decision boundary the panel shows `--` instead of a verdict
+(`PROV_MARGIN 1.0` in `PROV.H`): a spelling question like *"spell computer"*
+scores −0.3, which is not an unbacked country claim, just outside the axis'
+domain. Screenshot: `dos_boundary.png`.

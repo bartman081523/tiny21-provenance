@@ -46,15 +46,17 @@ static void scroll_up(void)
     int86(0x10, &r, &r);
 }
 
+/* Turbo C coordinates are WINDOW-relative; the app relies on that
+   (chat_win sets a window and works in window coordinates). */
 void gotoxy(int x, int y)
 {
-    cx = x;
-    cy = y;
+    cx = wx1 + x - 1;
+    cy = wy1 + y - 1;
     cursor();
 }
 
-int wherex(void) { return cx; }
-int wherey(void) { return cy; }
+int wherex(void) { return cx - wx1 + 1; }
+int wherey(void) { return cy - wy1 + 1; }
 
 int putch(int c)
 {

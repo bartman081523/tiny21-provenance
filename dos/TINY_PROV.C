@@ -790,8 +790,12 @@ static void monitor_live(void)
         meter(MON_X + 3, 4 + l, 15, v, l % 2 ? C_FRAME : C_ANSWER);
         act_max[l] *= 0.995f;
     }
-    if (!prov_valid) {
+    if (!prov_valid || prov_score > -PROV_MARGIN && prov_score < PROV_MARGIN) {
         put_at(MON_X, 9, C_DIM, "   --     ");
+        if (prov_valid) {
+            sprintf(buf, "%+6.1f", prov_score);
+            put_at(MON_X + 10, 9, C_DIM, buf);
+        }
     } else if (prov_score > 0.0f) {
         put_at(MON_X, 9, C_ANSWER, "familiar ");
         sprintf(buf, "%+6.1f", prov_score);

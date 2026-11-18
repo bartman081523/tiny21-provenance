@@ -2,6 +2,7 @@
 /* TINY.BIN quantised weights, layer 0, loo acc 0.775, p 0.0020 */
 #define PROV_D 96
 #define PROV_LAYER 0
+#define PROV_MARGIN 1.0f   /* dead zone: near the boundary show "--" */
 #define PROV_THR -0.7852658f
 static const float PROV_DIR[96] = {
     -0.0259639f, -0.1337666f, 0.0720455f, -0.0106964f, 0.0342266f, -0.0010247f,

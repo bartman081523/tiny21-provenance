@@ -44,6 +44,7 @@ TEXT = "#cfeef5"
 
 # display scales only (the axes are unbounded dot products, not probabilities)
 SCALE = {"context": 20.0, "familiarity": 10.0, "self": 2500.0}
+MARGIN = 1.0   # dead zone: near the decision boundary the verdict is "--"
 
 
 class Desk:
@@ -192,10 +193,13 @@ class Desk:
                 v.configure(text="%+.1f" % s, fg=MINT if s > 0 else RED)
 
         ctx = self.active.get("context", True) and scores["context"] > 0
-        fam = self.active.get("familiarity", True) and scores["familiarity"] > 0
+        fam = self.active.get("familiarity", True) and scores["familiarity"] > MARGIN
         if not (self.active.get("context", True)
                 or self.active.get("familiarity", True)):
             text, colour = "NO AXIS", DIM
+        elif self.active.get("familiarity", True) and abs(
+                scores["familiarity"]) < MARGIN:
+            text, colour = "--", DIM
         elif fam:
             text, colour = "FAMILIAR", MINT
         elif ctx:
@@ -204,7 +208,8 @@ class Desk:
             text, colour = "UNBACKED", RED
         self.verdict.configure(text=text, fg=colour)
         self.reason.configure(
-            text=("no calibrated axis on this model" if colour == DIM else
+            text=("near the decision boundary" if text == "--" else
+                  "no calibrated axis on this model" if colour == DIM else
                   "the entity is in the training data" if fam else
                   "the evidence is in the prompt" if ctx else
                   "neither training nor prompt backs this answer"))
