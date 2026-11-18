@@ -13,5 +13,8 @@ OW="${OW:?set OW to the OpenWatcom tree (contains binl64/, h/, lib286/)}"
 export WATCOM="$OW" INCLUDE="$OW/h" LIB="$OW/lib286:$OW/lib286/dos"
 export PATH="$OW/binl64:$PATH"
 cd "$DOS"
-"$OW/binl64/wcl" -ml -bt=dos -l=dos -DTINY_DOS_UI -fe=TINY_PROV.EXE TINY_PROV.C
+# -wcd=481: TINY.C uses Turbo C's `struct time`, which shadows the C library
+# function time(); the warning is cosmetic and Turbo C had the same names.
+"$OW/binl64/wcl" -ml -bt=dos -l=dos -wcd=481 -DTINY_DOS_UI \
+    -fe=TINY_PROV.EXE TINY_PROV.C
 ls -l TINY_PROV.EXE

@@ -26,7 +26,7 @@ OpenWatcom v2 cross-compiles it on Linux, 16-bit DOS target:
 ```bash
 curl -LO https://github.com/open-watcom/open-watcom-v2/releases/download/Last-CI-build/ow-snapshot.tar.xz
 tar -xf ow-snapshot.tar.xz -C /opt/ow        # 683 MB extracted
-OW=/opt/ow ./build.sh                        # -> dos/TINY_PROV.EXE
+OW=/opt/ow ./build.sh                        # -> dos/TINY_PROV.EXE (0 warnings)
 ```
 
 The shipped binary is already in `../dos/TINY_PROV.EXE` (68 KB, DOS real
@@ -47,6 +47,12 @@ OpenWatcom has none of the Turbo text API. Two small additions:
   `__TURBOC__` branches in the headers stay untouched, and the compat
   translation unit is included into the same one (OpenWatcom's `wcl` gave the
   two objects different code models).
+- `-wcd=481` silences one cosmetic warning: TINY.C uses Turbo C's
+  `struct time`, which shadows the C library function `time()`.
+
+`tiny_prov.patch` carries all source changes (guard rename, panel, compat
+include). `PROV.H`, `tc_compat.h` and `tc_compat.c` are added files and are
+not part of the diff; the patch header says so.
 
 **Verification**: the rebuilt binary answers the same 40 questions with the
 same 40 answers as the Turbo C build — `diff` is empty — both in plain mode

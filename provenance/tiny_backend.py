@@ -39,6 +39,7 @@ class TinyBackend:
         self.model.eval()
         self.layers = self.model.blocks
         self.name = "tiny-2.1"
+        self.ckpt = ckpt
         self.ctx = t2.CTX
 
     # -- vocabulary --------------------------------------------------------

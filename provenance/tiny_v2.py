@@ -66,6 +66,7 @@ class TinyV2Backend:
         self.model.eval()
         self.layers = self.model.blocks
         self.name = "tiny-2.1 quantised"
+        self.ckpt = ckpt
         self.ctx = train2.CTX
         self.dims = dims
 

@@ -7,7 +7,6 @@
 #include <i86.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <time.h>
 
 #include "tc_compat.h"
 

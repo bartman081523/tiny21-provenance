@@ -53,6 +53,8 @@ def main() -> int:
         fh.write(f"/* TINY.BIN quantised weights, layer {ax['layer']}, "
                  f"loo acc {ax['acc']:.3f}, p {ax['p']:.4f} */\n")
         fh.write(f"#define PROV_D {len(d)}\n")
+        fh.write("#define PROV_MARGIN 1.0f   /* dead zone: near the boundary "
+                 "the panel shows \"--\" */\n")
         fh.write(f"#define PROV_LAYER {ax['layer']}\n")
         fh.write(f"#define PROV_THR {thr:.7f}f\n")
         fh.write(carr(d, "PROV_DIR") + "\n")
