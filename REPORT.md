@@ -130,3 +130,66 @@ decode.
 
 Speed: 2–7 s per answer; the 40-question batch including boot takes ~140 s.
 Reproduce with `dos-test/build_image.sh`, `run.sh`, `compare.py`.
+
+---
+
+## The indicator in a GUI
+
+The DOS build has a neural monitor but no provenance display. Two things
+were added:
+
+### 1. A desktop desk that runs now
+
+`provenance/tinydesk.py` — the DOS layout rebuilt in Tkinter, running the
+released checkpoint: conversation on the left, monitor on the right, and
+under `CONFIDENCE` a **PROVENANCE** block with the three axes and the
+verdict.
+
+```
+  PROVENANCE
+  CONTEXT        n/a
+  FAMILIARITY   +5.4   FAMILIAR    ("the entity is in the training data")
+```
+
+```
+  PROVENANCE
+  CONTEXT        n/a
+  FAMILIARITY   -4.6   UNBACKED    ("neither training nor prompt backs this")
+```
+
+Screenshots: `provenance/tinydesk_familiar.png`,
+`provenance/tinydesk_unbacked.png`.
+
+```bash
+python provenance/tinydesk.py
+python provenance/tinydesk.py --demo "what is the capital of vrandel"
+```
+
+Axes that did not pass their own calibration are shown as **n/a** and are
+not allowed to justify an answer. This mattered: before the fix the panel
+said `CONTEXT` for `vrandel`, because the context axis separates nothing on
+this model (acc 0.0, p 1.0) yet still returns a non-zero dot product. The
+package now honours the calibration verdict — a real correctness fix, not a
+cosmetic one.
+
+### 2. A source patch for the DOS panel
+
+`dos-ui/` adds the same readout to `TINY.C`, between layer activity and
+confidence:
+
+```
+PROVENANCE
+familiar  +7.8
+```
+
+- `export_prov.py` fits the direction on the **shipped, quantised**
+  `TINY.BIN` (via a `TNY2` loader), not on the float checkpoint: layer 0,
+  LOO 0.775, permutation p 0.002, threshold −0.785, 18/20 real and 19/20
+  invented on the training cells.
+- `dos/TINY_PROV.C` + `dos/PROV.H` are ready to build:
+  `TCC -ml TINY_PROV.C` (Turbo C 2.0, as upstream).
+- **Not compiled here** — no Turbo C / OpenWatcom / DJGPP on this machine, so
+  the patch is source-verified only. The math is verified: the same
+  direction on the same weights in PyTorch gives the same signs, and the
+  `TNY2` loader reproduces the DOS answers exactly (`vrandel` → *"The
+  capital is Pyongyang."*, `poland` → *"I have never heard of Poland."*).
