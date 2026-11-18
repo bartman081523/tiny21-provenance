@@ -370,6 +370,21 @@ static int pick(void)
     return chosen(best);
 }
 
+/* Decoding router (measured, provenance/DIAGNOSIS.md): for capital
+   questions the free first token is a four-way split (answer letter /
+   "The" / "It" / the refusal "I have never heard"), which sends 2 of 194
+   countries into the fallback although the answer is known with p 0.997.
+   Routing those questions through the answer template removes the split. */
+static const char *route_suffix(const char *q)
+{
+    int n = (int)strlen(q);
+    if (strstr(q, "capital") == NULL)
+        return NULL;
+    if (n >= 2 && q[n - 2] == 'i' && q[n - 1] == 's')
+        return NULL;            /* already a completion */
+    return "the capital is ";
+}
+
 /* Answer question q into out[]. The two callbacks (may be NULL) are told
    about progress through the question and about every new letter.
    Returns the number of letters; *tenths gets the time taken. */
@@ -377,6 +392,7 @@ static int think(const char *q, char *out, long *tenths,
                  void (*on_step)(int i, int n), void (*on_letter)(int c))
 {
     int p = 0, n = (int)strlen(q), tok, letters = 0;
+    const char *suffix;
     clock_t t0 = clock();
 
     for (; q[p]; p++) {
@@ -384,7 +400,11 @@ static int think(const char *q, char *out, long *tenths,
         step(q[p] - 30, p, score);
     }
     prov_finish(n, q);          /* fam axis: last QUESTION letter state */
-    step(1, p++, score);                       /* end of the question */
+    suffix = route_suffix(q);
+    step(1, p++, score);        /* end of the question: "question\n" */
+    if (suffix != NULL)         /* then the answer template, as trained */
+        for (tok = 0; suffix[tok]; tok++)
+            step(suffix[tok] - 30, p++, score);
     prov_conf = 0.0f;           /* p_top of the first answer token */
     for (tok = 0; tok < VOCAB; tok++)
         if (score[tok] > prov_conf)

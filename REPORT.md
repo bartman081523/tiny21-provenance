@@ -266,3 +266,15 @@ single-pass "do I know this fact" readout in this model.
 On **Gemma 3** the same three-group probe gives a strict ordering
 (K 0.00 / R −5.60 / N −6.92, K vs R = 1.000) at layer 0 — a name-frequency
 gradient, still not a fact check.
+
+### Fix: routed decoding (Poland, Qatar)
+
+The false refusals are gone without retraining. `provenance/router.py` (and
+`route_suffix()` in the DOS app) decode capital questions through the trained
+answer template `"… \nthe capital is "`, which the model completes correctly
+for all 194 countries. Other relations keep the free decode.
+
+- 12/12 sampled capitals, 16/16 relation questions in `provenance/selftest.py`
+- 40-question DOS run: **20/20** real countries, nonces still confabulate and
+  are flagged by the panel
+- the free decode of `… poland` still refuses — the router is what fixes it

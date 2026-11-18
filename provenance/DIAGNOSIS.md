@@ -94,3 +94,32 @@ Only **2 of 194** countries take the fallback branch: **Poland and Qatar**.
 
 Reproduce: `python provenance/analyze_weaknesses.py` (194 forwards, writes
 `provenance/analyze_weaknesses.json`).
+
+## Fixed: routed decoding
+
+`provenance/router.py` classifies the question and, for capital questions,
+decodes directly with the trained answer template:
+
+```
+"what is the capital of poland" + "\n" + "the capital is "  ->  Warsaw.
+```
+
+It keeps the free decode for every other relation (spelling, language,
+arithmetic, plural, … — all 16/16 correct in the self-test), and it repairs a
+refusal by retrying with the prefix when one still occurs.
+
+Measured after the change (`provenance/selftest.py`):
+
+| battery | before | after |
+| :--- | :--- | :--- |
+| 12 sampled capitals | 9/12 (2 refusals) | **12/12**, 1 repaired |
+| 16 relation questions | 16/16 | 16/16 |
+| 40-question DOS run, real countries | 19/20 | **20/20** |
+
+The same router is in the DOS app (`route_suffix()` in `TINY_PROV.C`): the
+capital question is decoded with the template, everything else as before.
+Poland and Qatar now answer Warsaw / Doha in the GUI.
+
+This is a **decoding** fix, not a model fix. The training-side repair (one
+canonical answer prefix, a fallback that starts with a distinct token) is
+still the right long-term change; it needs a retrain and is documented above.

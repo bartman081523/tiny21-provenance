@@ -1,0 +1,546 @@
+{
+ "quant": {
+  "capitals": [
+   {
+    "country": "poland",
+    "truth": "warsaw",
+    "value": "Warsaw",
+    "ok": true,
+    "fallback": false,
+    "repaired": true
+   },
+   {
+    "country": "qatar",
+    "truth": "doha",
+    "value": "Doha",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "pakistan",
+    "truth": "islamabad",
+    "value": "Islamabad",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "france",
+    "truth": "paris",
+    "value": "Paris",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "peru",
+    "truth": "lima",
+    "value": "Lima",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "nauru",
+    "truth": "yaren",
+    "value": "Yaren",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "japan",
+    "truth": "tokyo",
+    "value": "Tokyo",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "brazil",
+    "truth": "brasilia",
+    "value": "Brasilia",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "canada",
+    "truth": "ottawa",
+    "value": "Ottawa",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "egypt",
+    "truth": "cairo",
+    "value": "Cairo",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "saudi arabia",
+    "truth": "riyadh",
+    "value": "Riyadh",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "united states",
+    "truth": "washington",
+    "value": "Washington D.C",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   }
+  ],
+  "relations": [
+   {
+    "question": "what language do they speak in canada",
+    "truth": "english",
+    "value": "English and French",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what language do they speak in japan",
+    "truth": "japanese",
+    "value": "In Japan people speak Japanese",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the money of japan",
+    "truth": "yen",
+    "value": "The Japanese yen",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what money do people use in brazil",
+    "truth": "real",
+    "value": "The Brazilian real",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "which continent is egypt in",
+    "truth": "africa",
+    "value": "Africa",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "which continent is brazil in",
+    "truth": "south america",
+    "value": "In South America",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the symbol for gold",
+    "truth": "au",
+    "value": "Au",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the symbol for iron",
+    "truth": "fe",
+    "value": "Fe",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "spell computer",
+    "truth": "c-o-m-p-u-t-e-r",
+    "value": "C-O-M-P-U-T-E-R",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "spell elephant",
+    "truth": "e-l-e-p-h-a-n-t",
+    "value": "E-L-E-P-H-A-N-T",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is 7 times 8",
+    "truth": "56",
+    "value": "56",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is 14 in roman numerals",
+    "truth": "xiv",
+    "value": "XIV",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "plural of mouse",
+    "truth": "mice",
+    "value": "Mice",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "past tense of go",
+    "truth": "went",
+    "value": "went",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is cat backwards",
+    "truth": "tac",
+    "value": "Tac",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what comes after 199",
+    "truth": "200",
+    "value": "200",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   }
+  ],
+  "nonce": [
+   {
+    "entity": "vrandel",
+    "value": "Hanoi",
+    "fallback": false
+   },
+   {
+    "entity": "qorvath",
+    "value": "Doha",
+    "fallback": false
+   },
+   {
+    "entity": "zelmuth",
+    "value": "Amman",
+    "fallback": false
+   },
+   {
+    "entity": "brixalon",
+    "value": "I do not know a country called Brixami",
+    "fallback": true
+   },
+   {
+    "entity": "tavrenko",
+    "value": "Lima",
+    "fallback": false
+   },
+   {
+    "entity": "oxwald",
+    "value": "Suva",
+    "fallback": false
+   },
+   {
+    "entity": "mireth",
+    "value": "Pasta Gaborone",
+    "fallback": false
+   },
+   {
+    "entity": "kalvun",
+    "value": "The capital of Kalva",
+    "fallback": false
+   }
+  ]
+ },
+ "float": {
+  "capitals": [
+   {
+    "country": "poland",
+    "truth": "warsaw",
+    "value": "Warsaw",
+    "ok": true,
+    "fallback": false,
+    "repaired": true
+   },
+   {
+    "country": "qatar",
+    "truth": "doha",
+    "value": "Doha",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "pakistan",
+    "truth": "islamabad",
+    "value": "Islamabad",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "france",
+    "truth": "paris",
+    "value": "Paris",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "peru",
+    "truth": "lima",
+    "value": "Lima",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "nauru",
+    "truth": "yaren",
+    "value": "Yaren",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "japan",
+    "truth": "tokyo",
+    "value": "Tokyo",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "brazil",
+    "truth": "brasilia",
+    "value": "Brasilia",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "canada",
+    "truth": "ottawa",
+    "value": "Ottawa",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "egypt",
+    "truth": "cairo",
+    "value": "Cairo",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "saudi arabia",
+    "truth": "riyadh",
+    "value": "Riyadh",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "country": "united states",
+    "truth": "washington",
+    "value": "Washington D.C",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   }
+  ],
+  "relations": [
+   {
+    "question": "what language do they speak in canada",
+    "truth": "english",
+    "value": "English and French",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what language do they speak in japan",
+    "truth": "japanese",
+    "value": "In Japanese",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the money of japan",
+    "truth": "yen",
+    "value": "The Japanese yen",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what money do people use in brazil",
+    "truth": "real",
+    "value": "The Brazilian real",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "which continent is egypt in",
+    "truth": "africa",
+    "value": "Africa",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "which continent is brazil in",
+    "truth": "south america",
+    "value": "In South America",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the symbol for gold",
+    "truth": "au",
+    "value": "Au",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is the symbol for iron",
+    "truth": "fe",
+    "value": "Fe",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "spell computer",
+    "truth": "c-o-m-p-u-t-e-r",
+    "value": "C-O-M-P-U-T-E-R",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "spell elephant",
+    "truth": "e-l-e-p-h-a-n-t",
+    "value": "E-L-E-P-H-A-N-T",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is 7 times 8",
+    "truth": "56",
+    "value": "56",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is 14 in roman numerals",
+    "truth": "xiv",
+    "value": "XIV",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "plural of mouse",
+    "truth": "mice",
+    "value": "Mice",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "past tense of go",
+    "truth": "went",
+    "value": "went",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what is cat backwards",
+    "truth": "tac",
+    "value": "Tac",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   },
+   {
+    "question": "what comes after 199",
+    "truth": "200",
+    "value": "200",
+    "ok": true,
+    "fallback": false,
+    "repaired": false
+   }
+  ],
+  "nonce": [
+   {
+    "entity": "vrandel",
+    "value": "Hanoi",
+    "fallback": false
+   },
+   {
+    "entity": "qorvath",
+    "value": "Doha",
+    "fallback": false
+   },
+   {
+    "entity": "zelmuth",
+    "value": "Bernader",
+    "fallback": false
+   },
+   {
+    "entity": "brixalon",
+    "value": "I do not know a country called Brixami",
+    "fallback": true
+   },
+   {
+    "entity": "tavrenko",
+    "value": "Lima",
+    "fallback": false
+   },
+   {
+    "entity": "oxwald",
+    "value": "Suva",
+    "fallback": false
+   },
+   {
+    "entity": "mireth",
+    "value": "Santa Fash",
+    "fallback": false
+   },
+   {
+    "entity": "kalvun",
+    "value": "The capital of Kalva",
+    "fallback": false
+   }
+  ]
+ }
+}
