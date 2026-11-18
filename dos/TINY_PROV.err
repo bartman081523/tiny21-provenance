@@ -1,3 +1,0 @@
-tc_compat.h(18): Warning! W481: col(13) class/enum has the same name as the function/variable 'time'
-tc_compat.h(18): Note! N393: col(13) included from TINY_PROV.C(462)
-/run/media/julian/ML6/toolchains/h/time.h(60): Note! N392: col(10) definition: 'unsigned long __watcall time( unsigned long * )'
