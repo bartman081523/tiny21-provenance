@@ -100,3 +100,33 @@ PYTHONPATH=/path/to/provenance-audit python provenance/run_tiny.py
 
 `provenance/tiny_backend.py` is a 110-line adapter (encode, capture, greedy
 generate); `provenance/run_tiny.py` is the whole experiment.
+
+---
+
+## DOS end-to-end (the shipped binary)
+
+The audit above runs on the PyTorch checkpoint. `dos-test/` boots the real
+`TINY.EXE` + `TINY.BIN` in a DOS VM (QEMU + FreeDOS 1.3, since MS-DOS 6.22 is
+not redistributable and 86Box was not installed) and asks the same 40
+questions with `TINY 0 /P` — deterministic argmax, comparable with the float
+decode.
+
+| | float checkpoint | DOS build |
+| :--- | :--- | :--- |
+| real facts answered | 20 / 20 | 19 / 20 |
+| invented entities answered | 19 / 20 | 16 / 20 |
+| claim agreement | — | 28 / 40 (19/20 real) |
+
+- The shipped binary reproduces the checkpoint: 19 of 20 real capitals are
+  identical. The single difference is Poland — the float model guesses
+  "Warsaw" (unstable across wordings), the quantised build refuses ("I have
+  never heard of Poland").
+- The confabulation survives export: `vrandel` → *"The capital is
+  Pyongyang."* in both, `qorvath` → *"The capital of Qorgenti is Dharke."*
+- New pattern visible only in DOS: invented names are resolved onto real
+  countries — `zelmuth` → *"The capital of Zera is Antananarivo."*,
+  `nordrel` → *"The capital of Norway is Oslo."* That is the prompt
+  projection onto training, made explicit.
+
+Speed: 2–7 s per answer; the 40-question batch including boot takes ~140 s.
+Reproduce with `dos-test/build_image.sh`, `run.sh`, `compare.py`.
