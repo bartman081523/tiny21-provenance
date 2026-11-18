@@ -111,3 +111,19 @@ def test_nonce_is_flagged_by_familiarity(quant):
     mu, sd = float((HK[:, 0] @ d).mean()), float((HK[:, 0] @ d).std())
     z = lambda n: float(((H(n)[0] @ d) - mu) / sd)
     assert z("france") > z("vrandel")
+
+
+def test_all_capitals(quant):
+    """The definitive battery: every capital in the fact table, routed."""
+    import re
+    from provenance.router import answer
+    from provenance.analyze_weaknesses import countries
+    ok, fails = 0, []
+    for name, cap in countries():
+        r = answer(quant, f"what is the capital of {name}", n=30)
+        if re.sub(r"[^a-z0-9]", "", cap) in re.sub(r"[^a-z0-9]", "", r["value"].lower()):
+            ok += 1
+        else:
+            fails.append((name, cap, r["value"]))
+    assert not fails, fails[:5]
+    assert ok == 194, ok

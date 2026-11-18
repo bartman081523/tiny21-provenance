@@ -274,7 +274,8 @@ The false refusals are gone without retraining. `provenance/router.py` (and
 answer template `"… \nthe capital is "`, which the model completes correctly
 for all 194 countries. Other relations keep the free decode.
 
-- 12/12 sampled capitals, 16/16 relation questions in `provenance/selftest.py`
+- **194/194 capitals** in 3 s (`provenance/all_capitals.json`), 12/12 sampled
+  capitals, 16/16 relation questions in `provenance/selftest.py`
 - 40-question DOS run: **20/20** real countries, nonces still confabulate and
   are flagged by the panel
 - the free decode of `… poland` still refuses — the router is what fixes it

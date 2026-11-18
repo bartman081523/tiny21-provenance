@@ -29,6 +29,8 @@ FALLBACKS = ("i have never heard", "i do not know", "i did not understand",
 # whose prefix was measured to work are listed; everything else stays free.
 PREFIXES = (
     ("capital", "the capital is "),
+    ("main city", "the capital is "),      # gen2: "what is the main city of X"
+    ("government of", "the capital is "),  # gen2: "where is the government of X"
     ("money", "they use "),
     ("currency", "they use "),
     ("language", "they speak "),
@@ -75,26 +77,48 @@ def value_of(text: str) -> str:
     return t.strip().rstrip(".").strip()
 
 
-def _generate(backend: Any, prompt: str, n: int) -> str:
-    _, text = backend.generate(prompt, n)
-    return text.strip()
+def _generate(backend: Any, ids, n: int) -> str:
+    """Greedy from explicit token ids.
+
+    The backends append a newline to a prompt string; the routed decode needs
+    an exact prompt ("question\nthe capital is "), so the router builds the
+    ids itself.
+    """
+    import torch
+    out = []
+    with torch.no_grad():
+        x = torch.tensor([list(ids)])
+        while len(out) < n and x.shape[1] < backend.ctx:
+            t = int(backend.model(x)[0, -1].argmax(-1))
+            if t <= 1:
+                break
+            out.append(t)
+            x = torch.cat([x, torch.tensor([[t]])], 1)
+    return backend.decode(out).strip()
 
 
 def answer(backend: Any, question: str, n: int = 40,
            repair: bool = True) -> Dict[str, Any]:
-    """Ask, and if the model refused, retry with the relation prefix."""
-    first = _generate(backend, question + "\n", n)
-    out = {"question": question, "text": first,
-           "value": value_of(first), "fallback": is_fallback(first),
-           "repaired": False, "prefix": None}
-    if not out["fallback"] or not repair:
-        return out
-    pre = prefix_for(question)
-    if pre is None:
-        return out
-    second = _generate(backend, question + "\n" + pre, n)
-    if not is_fallback(second):
-        out.update({"text": second, "value": value_of(second),
-                    "fallback": False, "repaired": True, "prefix": pre,
-                    "first_text": first})
+    """Routed decode first, free decode as the fallback.
+
+    For a question with a known answer template the routed decode is shorter
+    and more accurate (it removes the four-way first-token split). If the
+    routed decode refuses, the free decode is tried; if that refuses too the
+    refusal stands.
+    """
+    pre = prefix_for(question) if repair else None
+    free_text = None
+    if pre is not None:
+        text = _generate(backend, backend.encode(question + "\n" + pre), n)
+        if not is_fallback(text):
+            return {"question": question, "text": text,
+                    "value": value_of(text), "fallback": False,
+                    "repaired": False, "prefix": pre, "via": "routed"}
+        free_text = text
+    text = _generate(backend, backend.encode(question + "\n"), n)
+    out = {"question": question, "text": text, "value": value_of(text),
+           "fallback": is_fallback(text), "repaired": False,
+           "prefix": pre, "via": "free"}
+    if out["fallback"] and pre is not None and free_text is not None:
+        out["first_text"] = free_text
     return out

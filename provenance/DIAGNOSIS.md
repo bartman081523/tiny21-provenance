@@ -104,15 +104,17 @@ decodes directly with the trained answer template:
 "what is the capital of poland" + "\n" + "the capital is "  ->  Warsaw.
 ```
 
-It keeps the free decode for every other relation (spelling, language,
-arithmetic, plural, … — all 16/16 correct in the self-test), and it repairs a
-refusal by retrying with the prefix when one still occurs.
+The router decodes **routed first**: a question whose relation has a known
+answer template is answered through that template; the free decode is only
+the fallback. That removes the four-way split at token 1 instead of repairing
+its damage.
 
-Measured after the change (`provenance/selftest.py`):
+Measured after the change:
 
 | battery | before | after |
 | :--- | :--- | :--- |
-| 12 sampled capitals | 9/12 (2 refusals) | **12/12**, 1 repaired |
+| **all 194 capitals** | 151/194 with truncation, 2 refusals | **194/194** in 3 s |
+| 12 sampled capitals | 9/12 (2 refusals) | **12/12** |
 | 16 relation questions | 16/16 | 16/16 |
 | 40-question DOS run, real countries | 19/20 | **20/20** |
 

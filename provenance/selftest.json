@@ -7,7 +7,7 @@
     "value": "Warsaw",
     "ok": true,
     "fallback": false,
-    "repaired": true
+    "repaired": false
    },
    {
     "country": "qatar",
@@ -110,7 +110,7 @@
    {
     "question": "what language do they speak in japan",
     "truth": "japanese",
-    "value": "In Japan people speak Japanese",
+    "value": "Japanese",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -118,7 +118,7 @@
    {
     "question": "what is the money of japan",
     "truth": "yen",
-    "value": "The Japanese yen",
+    "value": "the Japanese yen",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -126,7 +126,7 @@
    {
     "question": "what money do people use in brazil",
     "truth": "real",
-    "value": "The Brazilian real",
+    "value": "the Brazilian real",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -142,7 +142,7 @@
    {
     "question": "which continent is brazil in",
     "truth": "south america",
-    "value": "In South America",
+    "value": "South America",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -182,7 +182,7 @@
    {
     "question": "what is 7 times 8",
     "truth": "56",
-    "value": "56",
+    "value": "7 times 8 is 56",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -231,23 +231,23 @@
   "nonce": [
    {
     "entity": "vrandel",
-    "value": "Hanoi",
+    "value": "Pyongyang",
     "fallback": false
    },
    {
     "entity": "qorvath",
-    "value": "Doha",
+    "value": "Lobamba",
     "fallback": false
    },
    {
     "entity": "zelmuth",
-    "value": "Amman",
+    "value": "Brussels",
     "fallback": false
    },
    {
     "entity": "brixalon",
-    "value": "I do not know a country called Brixami",
-    "fallback": true
+    "value": "Bridgetown",
+    "fallback": false
    },
    {
     "entity": "tavrenko",
@@ -261,12 +261,12 @@
    },
    {
     "entity": "mireth",
-    "value": "Pasta Gaborone",
+    "value": "Pasca",
     "fallback": false
    },
    {
     "entity": "kalvun",
-    "value": "The capital of Kalva",
+    "value": "Bandar Seri Begawan",
     "fallback": false
    }
   ]
@@ -279,7 +279,7 @@
     "value": "Warsaw",
     "ok": true,
     "fallback": false,
-    "repaired": true
+    "repaired": false
    },
    {
     "country": "qatar",
@@ -382,7 +382,7 @@
    {
     "question": "what language do they speak in japan",
     "truth": "japanese",
-    "value": "In Japanese",
+    "value": "Japanese",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -390,7 +390,7 @@
    {
     "question": "what is the money of japan",
     "truth": "yen",
-    "value": "The Japanese yen",
+    "value": "the Japanese yen",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -398,7 +398,7 @@
    {
     "question": "what money do people use in brazil",
     "truth": "real",
-    "value": "The Brazilian real",
+    "value": "the Brazilian real",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -414,7 +414,7 @@
    {
     "question": "which continent is brazil in",
     "truth": "south america",
-    "value": "In South America",
+    "value": "South America",
     "ok": true,
     "fallback": false,
     "repaired": false
@@ -503,23 +503,23 @@
   "nonce": [
    {
     "entity": "vrandel",
-    "value": "Hanoi",
+    "value": "Pyongyang",
     "fallback": false
    },
    {
     "entity": "qorvath",
-    "value": "Doha",
+    "value": "Lobamba",
     "fallback": false
    },
    {
     "entity": "zelmuth",
-    "value": "Bernader",
+    "value": "Brussels",
     "fallback": false
    },
    {
     "entity": "brixalon",
-    "value": "I do not know a country called Brixami",
-    "fallback": true
+    "value": "Bridgetown",
+    "fallback": false
    },
    {
     "entity": "tavrenko",
@@ -533,12 +533,12 @@
    },
    {
     "entity": "mireth",
-    "value": "Santa Fash",
+    "value": "Pasca",
     "fallback": false
    },
    {
     "entity": "kalvun",
-    "value": "The capital of Kalva",
+    "value": "Bandar Seri Begawan",
     "fallback": false
    }
   ]
