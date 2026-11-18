@@ -451,7 +451,7 @@ static int plain_main(void)
     return 0;
 }
 
-#ifdef __TURBOC__
+#ifdef TINY_DOS_UI
 /* ==================================================================
    The DOS screen: Turbo C conio for text, the PC speaker for sound,
    and on VGA a reprogrammed neon colour palette.
@@ -459,6 +459,8 @@ static int plain_main(void)
 #include <conio.h>
 #include <dos.h>
 #include <io.h>
+#include "tc_compat.h"
+#include "tc_compat.c"      /* same translation unit: one code model */
 
 #define SCRW   80
 #define CHAT_L 3                /* chat window, inside its frame */
@@ -1412,7 +1414,7 @@ int main(int argc, char **argv)
             creativity = argv[i][0] - '0';
         else if (is_word(argv[i], "/p") || is_word(argv[i], "-p"))
             plain = 1;
-#ifdef __TURBOC__
+#ifdef TINY_DOS_UI
         else if (is_word(argv[i], "/demo") || is_word(argv[i], "-demo"))
             demo = 1;
         else if (is_word(argv[i], "/dump"))
@@ -1428,7 +1430,7 @@ int main(int argc, char **argv)
 #endif
     }
     srand((unsigned)time(NULL));
-#ifdef __TURBOC__
+#ifdef TINY_DOS_UI
     if (!plain && isatty(0) && isatty(1))
         return ui_main();
 #endif

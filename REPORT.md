@@ -188,8 +188,14 @@ familiar  +7.8
   invented on the training cells.
 - `dos/TINY_PROV.C` + `dos/PROV.H` are ready to build:
   `TCC -ml TINY_PROV.C` (Turbo C 2.0, as upstream).
-- **Not compiled here** — no Turbo C / OpenWatcom / DJGPP on this machine, so
-  the patch is source-verified only. The math is verified: the same
-  direction on the same weights in PyTorch gives the same signs, and the
-  `TNY2` loader reproduces the DOS answers exactly (`vrandel` → *"The
-  capital is Pyongyang."*, `poland` → *"I have never heard of Poland."*).
+- **Compiled and verified.** No Turbo C was needed: OpenWatcom v2
+  cross-compiles the 16-bit DOS target on Linux (`dos-ui/build.sh`). The
+  whole full-screen UI is guarded by `#ifdef __TURBOC__` and Watcom has no
+  Turbo text API, so `dos/tc_compat.[ch]` supplies it on the VGA buffer
+  (putch/cputs/cprintf/gotoxy/window/textattr/textmode/clrscr/gettextinfo/
+  gettime/gettext/sound/delay) and the guard is renamed to `TINY_DOS_UI`.
+- The rebuilt `TINY_PROV.EXE` answers the same 40 questions with the same 40
+  answers as the Turbo C build (empty `diff`), and the panel is live in the
+  real UI: `familiar +5.9` for *estonia* → Tallinn, `UNBACKED −4.6` for
+  *vrandel* → "The capital is Pyongyang." at CONFIDENCE 100 %.
+  Screenshots: `dos-ui/dos_familiar.png`, `dos-ui/dos_unbacked.png`.
