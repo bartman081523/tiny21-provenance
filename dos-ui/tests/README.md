@@ -51,3 +51,14 @@ OW=/opt/ow ../dos-ui/build.sh
 The key-injection helper used for these tests is `sendkey` over the QEMU
 monitor; note that QEMU names the keys `slash`, `dot`, `minus`, `spc`, `ret`
 — a literal `/` is silently dropped.
+
+## Timing comparison (same QEMU, same 40 questions)
+
+```
+TINY      (Turbo C 2.0)  133.6 s / 40 answers = 3.34 s each
+TINY_PROV (OpenWatcom)   119.8 s / 40 answers = 2.99 s each
+```
+
+~10 % apart, both "a few seconds" as documented upstream. The difference is
+code generation, not the delay implementation (which was the bug fixed
+earlier: before that fix the watcom build needed >16 s just to boot).
