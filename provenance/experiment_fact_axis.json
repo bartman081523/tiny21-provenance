@@ -1,0 +1,431 @@
+{
+ "rows": {
+  "K": [
+   {
+    "entity": "france",
+    "truth": "paris",
+    "p_top": 0.9999116659164429,
+    "entropy": 0.0010105931432917714,
+    "p_truth": 0.9999116659164429
+   },
+   {
+    "entity": "germany",
+    "truth": "berlin",
+    "p_top": 0.9999680519104004,
+    "entropy": 0.00041130982572212815,
+    "p_truth": 0.9999680519104004
+   },
+   {
+    "entity": "japan",
+    "truth": "tokyo",
+    "p_top": 0.9973165392875671,
+    "entropy": 0.02137727290391922,
+    "p_truth": 0.9973165392875671
+   },
+   {
+    "entity": "italy",
+    "truth": "rome",
+    "p_top": 0.9999949932098389,
+    "entropy": 7.191213080659509e-05,
+    "p_truth": 0.9999949932098389
+   },
+   {
+    "entity": "spain",
+    "truth": "madrid",
+    "p_top": 0.999966025352478,
+    "entropy": 0.0004219276597723365,
+    "p_truth": 0.999966025352478
+   },
+   {
+    "entity": "portugal",
+    "truth": "lisbon",
+    "p_top": 0.9999939203262329,
+    "entropy": 9.15205164346844e-05,
+    "p_truth": 0.9999939203262329
+   },
+   {
+    "entity": "austria",
+    "truth": "vienna",
+    "p_top": 0.9999951124191284,
+    "entropy": 6.865026080049574e-05,
+    "p_truth": 0.9999951124191284
+   },
+   {
+    "entity": "greece",
+    "truth": "athens",
+    "p_top": 0.9998821020126343,
+    "entropy": 0.0012879378627985716,
+    "p_truth": 0.9998821020126343
+   },
+   {
+    "entity": "norway",
+    "truth": "oslo",
+    "p_top": 0.9999841451644897,
+    "entropy": 0.0002065194130409509,
+    "p_truth": 0.9999841451644897
+   },
+   {
+    "entity": "sweden",
+    "truth": "stockholm",
+    "p_top": 0.9999178647994995,
+    "entropy": 0.0009087047656066716,
+    "p_truth": 0.9999178647994995
+   },
+   {
+    "entity": "poland",
+    "truth": "warsaw",
+    "p_top": 0.9964113831520081,
+    "entropy": 0.024023674428462982,
+    "p_truth": 0.9964113831520081
+   },
+   {
+    "entity": "hungary",
+    "truth": "budapest",
+    "p_top": 0.9997218251228333,
+    "entropy": 0.0030259958002716303,
+    "p_truth": 0.9997218251228333
+   },
+   {
+    "entity": "ireland",
+    "truth": "dublin",
+    "p_top": 0.9990528225898743,
+    "entropy": 0.008930251002311707,
+    "p_truth": 0.9990528225898743
+   },
+   {
+    "entity": "egypt",
+    "truth": "cairo",
+    "p_top": 0.9999865293502808,
+    "entropy": 0.00018001410353463143,
+    "p_truth": 0.9999865293502808
+   },
+   {
+    "entity": "canada",
+    "truth": "ottawa",
+    "p_top": 0.9993041753768921,
+    "entropy": 0.006699517834931612,
+    "p_truth": 0.9993041753768921
+   },
+   {
+    "entity": "brazil",
+    "truth": "brasilia",
+    "p_top": 0.9995777010917664,
+    "entropy": 0.0038903725799173117,
+    "p_truth": 0.9995777010917664
+   },
+   {
+    "entity": "kenya",
+    "truth": "nairobi",
+    "p_top": 0.9999505281448364,
+    "entropy": 0.0005461664986796677,
+    "p_truth": 0.9999505281448364
+   },
+   {
+    "entity": "russia",
+    "truth": "moscow",
+    "p_top": 0.9998195767402649,
+    "entropy": 0.0019665237050503492,
+    "p_truth": 0.9998195767402649
+   },
+   {
+    "entity": "china",
+    "truth": "beijing",
+    "p_top": 0.9999996423721313,
+    "entropy": 7.206841473816894e-06,
+    "p_truth": 0.9999996423721313
+   },
+   {
+    "entity": "cuba",
+    "truth": "havana",
+    "p_top": 0.999889612197876,
+    "entropy": 0.0011892917100340128,
+    "p_truth": 0.999889612197876
+   }
+  ],
+  "R": [
+   {
+    "entity": "nauru",
+    "truth": "yaren",
+    "p_top": 0.9975323677062988,
+    "entropy": 0.0179599616676569,
+    "p_truth": 0.9975323677062988
+   },
+   {
+    "entity": "tuvalu",
+    "truth": "funafuti",
+    "p_top": 0.9998983144760132,
+    "entropy": 0.0010668928734958172,
+    "p_truth": 0.9998983144760132
+   },
+   {
+    "entity": "palau",
+    "truth": "ngerulmud",
+    "p_top": 0.9999980926513672,
+    "entropy": 2.8765474780811928e-05,
+    "p_truth": 0.9999980926513672
+   },
+   {
+    "entity": "kiribati",
+    "truth": "south tarawa",
+    "p_top": 0.9983831644058228,
+    "entropy": 0.014569981954991817,
+    "p_truth": 0.9983831644058228
+   },
+   {
+    "entity": "comoros",
+    "truth": "moroni",
+    "p_top": 0.9997872710227966,
+    "entropy": 0.0022384529002010822,
+    "p_truth": 0.9997872710227966
+   },
+   {
+    "entity": "vanuatu",
+    "truth": "port vila",
+    "p_top": 0.9960997104644775,
+    "entropy": 0.029772445559501648,
+    "p_truth": 0.9960997104644775
+   },
+   {
+    "entity": "lesotho",
+    "truth": "maseru",
+    "p_top": 0.9997109770774841,
+    "entropy": 0.0028561053331941366,
+    "p_truth": 0.9997109770774841
+   },
+   {
+    "entity": "bhutan",
+    "truth": "thimphu",
+    "p_top": 0.9968152642250061,
+    "entropy": 0.026725448668003082,
+    "p_truth": 0.9968152642250061
+   },
+   {
+    "entity": "maldives",
+    "truth": "male",
+    "p_top": 0.9999567270278931,
+    "entropy": 0.0005057086818851531,
+    "p_truth": 0.9999567270278931
+   },
+   {
+    "entity": "seychelles",
+    "truth": "victoria",
+    "p_top": 0.9999958276748657,
+    "entropy": 5.668764788424596e-05,
+    "p_truth": 0.9999958276748657
+   },
+   {
+    "entity": "barbados",
+    "truth": "bridgetown",
+    "p_top": 0.9998360872268677,
+    "entropy": 0.0017563535366207361,
+    "p_truth": 0.9998360872268677
+   },
+   {
+    "entity": "grenada",
+    "truth": "st georges",
+    "p_top": 0.9995977282524109,
+    "entropy": 0.003929908853024244,
+    "p_truth": 0.9995977282524109
+   },
+   {
+    "entity": "dominica",
+    "truth": "roseau",
+    "p_top": 0.9961263537406921,
+    "entropy": 0.030428729951381683,
+    "p_truth": 0.9961263537406921
+   },
+   {
+    "entity": "saint lucia",
+    "truth": "castries",
+    "p_top": 0.9999065399169922,
+    "entropy": 0.0010731355287134647,
+    "p_truth": 0.9999065399169922
+   },
+   {
+    "entity": "belize",
+    "truth": "belmopan",
+    "p_top": 0.998871386051178,
+    "entropy": 0.010441853664815426,
+    "p_truth": 0.998871386051178
+   },
+   {
+    "entity": "suriname",
+    "truth": "paramaribo",
+    "p_top": 0.9989848732948303,
+    "entropy": 0.008121018297970295,
+    "p_truth": 0.9989848732948303
+   },
+   {
+    "entity": "guyana",
+    "truth": "georgetown",
+    "p_top": 0.9990506768226624,
+    "entropy": 0.00808982364833355,
+    "p_truth": 0.9990506768226624
+   },
+   {
+    "entity": "sao tome and principe",
+    "truth": "sao tome",
+    "p_top": 0.8983572721481323,
+    "entropy": 0.4062533974647522,
+    "p_truth": 0.8983572721481323
+   },
+   {
+    "entity": "eswatini",
+    "truth": "lobamba",
+    "p_top": 0.9996877908706665,
+    "entropy": 0.0033165039494633675,
+    "p_truth": 0.9996877908706665
+   },
+   {
+    "entity": "antigua and barbuda",
+    "truth": "saint johns",
+    "p_top": 0.9999943971633911,
+    "entropy": 8.062557026278228e-05,
+    "p_truth": 0.9999943971633911
+   }
+  ],
+  "N": [
+   {
+    "entity": "vrandel",
+    "truth": null,
+    "p_top": 0.8236684203147888,
+    "entropy": 0.6486044526100159,
+    "p_truth": null
+   },
+   {
+    "entity": "qorvath",
+    "truth": null,
+    "p_top": 0.9385724663734436,
+    "entropy": 0.2692760229110718,
+    "p_truth": null
+   },
+   {
+    "entity": "zelmuth",
+    "truth": null,
+    "p_top": 0.8404364585876465,
+    "entropy": 0.512087881565094,
+    "p_truth": null
+   },
+   {
+    "entity": "brixalon",
+    "truth": null,
+    "p_top": 0.9974021911621094,
+    "entropy": 0.02094428241252899,
+    "p_truth": null
+   },
+   {
+    "entity": "tavrenko",
+    "truth": null,
+    "p_top": 0.5551580190658569,
+    "entropy": 1.0451836585998535,
+    "p_truth": null
+   },
+   {
+    "entity": "oxwald",
+    "truth": null,
+    "p_top": 0.8018330931663513,
+    "entropy": 0.6081818342208862,
+    "p_truth": null
+   },
+   {
+    "entity": "mireth",
+    "truth": null,
+    "p_top": 0.7146742939949036,
+    "entropy": 0.6082847118377686,
+    "p_truth": null
+   },
+   {
+    "entity": "kalvun",
+    "truth": null,
+    "p_top": 0.7341591119766235,
+    "entropy": 0.7742586135864258,
+    "p_truth": null
+   },
+   {
+    "entity": "draneth",
+    "truth": null,
+    "p_top": 0.990965723991394,
+    "entropy": 0.061390891671180725,
+    "p_truth": null
+   },
+   {
+    "entity": "sovril",
+    "truth": null,
+    "p_top": 0.9915267825126648,
+    "entropy": 0.056141845881938934,
+    "p_truth": null
+   },
+   {
+    "entity": "kalthen",
+    "truth": null,
+    "p_top": 0.7207112908363342,
+    "entropy": 0.7716017961502075,
+    "p_truth": null
+   },
+   {
+    "entity": "brumire",
+    "truth": null,
+    "p_top": 0.981696367263794,
+    "entropy": 0.11955182999372482,
+    "p_truth": null
+   },
+   {
+    "entity": "vasquin",
+    "truth": null,
+    "p_top": 0.999950647354126,
+    "entropy": 0.0006032653036527336,
+    "p_truth": null
+   },
+   {
+    "entity": "nordrel",
+    "truth": null,
+    "p_top": 0.9633978009223938,
+    "entropy": 0.17060182988643646,
+    "p_truth": null
+   },
+   {
+    "entity": "pelvath",
+    "truth": null,
+    "p_top": 0.9820728302001953,
+    "entropy": 0.10085918009281158,
+    "p_truth": null
+   },
+   {
+    "entity": "grimsel",
+    "truth": null,
+    "p_top": 0.941426157951355,
+    "entropy": 0.24778805673122406,
+    "p_truth": null
+   },
+   {
+    "entity": "torvane",
+    "truth": null,
+    "p_top": 0.5321150422096252,
+    "entropy": 0.7298309803009033,
+    "p_truth": null
+   },
+   {
+    "entity": "heskril",
+    "truth": null,
+    "p_top": 0.46901315450668335,
+    "entropy": 1.3574262857437134,
+    "p_truth": null
+   },
+   {
+    "entity": "ondram",
+    "truth": null,
+    "p_top": 0.9314450621604919,
+    "entropy": 0.3556985557079315,
+    "p_truth": null
+   },
+   {
+    "entity": "weltris",
+    "truth": null,
+    "p_top": 0.9583024978637695,
+    "entropy": 0.22137603163719177,
+    "p_truth": null
+   }
+  ]
+ },
+ "slot": "what is the capital of {X}\nthe capital is "
+}

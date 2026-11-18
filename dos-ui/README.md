@@ -157,3 +157,31 @@ on this set.
 
 Screenshots: `tests/panel_familiar.png` (+2.1), `tests/panel_unbacked.png`
 (−1.4), `tests/panel_gate.png` (`--`).
+
+## Second signal: answer confidence
+
+At the answer slot ("… the capital is ") the first answer letter is almost
+certain for real countries and noticeably less for invented ones:
+
+| group | p(top letter) | entropy |
+| :--- | :--- | :--- |
+| known | 1.000 | 0.004 |
+| obscure real | 0.994 | 0.028 |
+| invented | 0.843 | 0.434 |
+
+AUROC for nonce vs real: **0.965** (known) / **0.927** (obscure). It does *not*
+separate known from obscure (0.690), so it is a second **confabulation**
+detector, not a fact axis.
+
+The two signals are only weakly correlated (r = 0.35) and combine to
+**AUROC 0.995** over the 60 entities. The panel uses both:
+
+```
+UNBACKED   if  fam < -0.5  OR  p_top < 0.90
+familiar   if  fam >  0.5  AND p_top >= 0.95
+--         otherwise (borderline or outside the domain)
+```
+
+Measured: 48/60 answered, accuracy 0.938, 19/20 invented caught, 3/40 real
+flagged. The confidence alone does not help against *stable* confabulations
+(the model is confident there too) — that stays the audit's job.

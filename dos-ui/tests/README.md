@@ -87,3 +87,35 @@ mean z  0.950    --       --        (K 0.00 / R -0.91 / N -3.32)
 
 Run: `python provenance/experiment_precision.py` (writes
 `provenance/experiment_precision.json`).
+
+## Fact axis (does a single forward know "do I know this"?)
+
+At the answer slot, with the true capital known:
+
+| group | p(top letter) | p(true first letter) | entropy |
+| :--- | :--- | :--- | :--- |
+| known | 1.000 | 1.000 | 0.004 |
+| obscure real | 0.994 | 0.994 | 0.028 |
+| invented | 0.843 | — | 0.434 |
+
+`p_truth` AUROC known vs obscure **0.690** — no single-pass knowledge readout.
+The model is as confident about a memorised obscure capital as about a famous
+one, and only 0.84 about a confabulation. So this is a *second nonce
+detector* (0.965 / 0.927), not a fact axis.
+
+Combined with the familiarity ensemble (r = 0.35): **AUROC 0.995** for nonce
+vs real; rule at 0.938 accuracy / 48 calls.
+
+## Cross-model: Gemma 3 (same three groups, port template)
+
+```
+layer   K vs N   R vs N   K vs R
+0       1.000    0.875    1.000
+...
+25      1.000    1.000    1.000
+mean z  K 0.00   R -5.60  N -6.92
+```
+
+On Gemma 3 the three groups are strictly ordered — a familiarity/frequency
+gradient at layer 0, not chance as on Tiny. Same limit though: it orders
+*names*, it does not certify the fact.

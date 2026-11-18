@@ -157,6 +157,7 @@ static float bx[MAXD], bh[MAXD], bq[MAXD], bt[MAXD], ba[MAXD], bm[MAXHID], bs[CT
    0.775 leave-one-out accuracy, the 4-layer ensemble 0.950. */
 static float prov_h[PROV_L][MAXD];
 static float prov_score;
+static float prov_conf;      /* p_top of the first answer token */
 static int prov_valid;
 
 static void prov_finish(int n, const char *q)
@@ -382,8 +383,12 @@ static int think(const char *q, char *out, long *tenths,
         if (on_step) on_step(p, n);
         step(q[p] - 30, p, score);
     }
-    prov_finish(n, q);                         /* before the newline */
+    prov_finish(n, q);          /* fam axis: last QUESTION letter state */
     step(1, p++, score);                       /* end of the question */
+    prov_conf = 0.0f;           /* p_top of the first answer token */
+    for (tok = 0; tok < VOCAB; tok++)
+        if (score[tok] > prov_conf)
+            prov_conf = score[tok];
     for (; p < CTX; p++) {
         tok = pick();
         if (tok <= 1) break;                   /* end of the answer */
@@ -806,12 +811,12 @@ static void monitor_live(void)
     if (!prov_valid) {
         put_at(MON_X, 9, C_DIM, "   --               ");
     } else {
-        if (prov_score > -PROV_MARGIN && prov_score < PROV_MARGIN)
-            put_at(MON_X, 9, C_DIM, "   --     ");
-        else if (prov_score > 0.0f)
+        if ((prov_score < -PROV_MARGIN) || (prov_conf < PROV_CONF_LO))
+            put_at(MON_X, 9, C_HOT, "UNBACKED ");
+        else if ((prov_score > PROV_MARGIN) && (prov_conf >= PROV_CONF_HI))
             put_at(MON_X, 9, C_ANSWER, "familiar ");
         else
-            put_at(MON_X, 9, C_HOT, "UNBACKED ");
+            put_at(MON_X, 9, C_DIM, "   --     ");
         sprintf(buf, "%+6.1f", prov_score);
         put_at(MON_X + 10, 9, C_DIM, buf);
     }

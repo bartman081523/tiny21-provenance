@@ -3,6 +3,8 @@
 #define PROV_D 96
 #define PROV_L 4
 #define PROV_THR_Z -1.657847f
+#define PROV_CONF_LO 0.90f  /* answer confidence below: the model is guessing */
+#define PROV_CONF_HI 0.95f  /* needed for a confident "familiar" */
 #define PROV_MARGIN 0.50f  /* dead zone around the boundary, in familiar-group sigmas */
 #define PROV_LAYER 0
 #define PROV_THR -0.7852658f

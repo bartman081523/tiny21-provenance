@@ -78,6 +78,10 @@ def main() -> int:
         fh.write(f"#define PROV_D {len(d)}\n")
         fh.write(f"#define PROV_L {L}\n")
         fh.write(f"#define PROV_THR_Z {thr_z:.6f}f\n")
+        fh.write("#define PROV_CONF_LO 0.90f  /* answer confidence below: "
+                 "the model is guessing */\n")
+        fh.write("#define PROV_CONF_HI 0.95f  /* needed for a confident "
+                 "\"familiar\" */\n")
         fh.write(f"#define PROV_MARGIN {margin:.2f}f  /* dead zone around the "
                  f"boundary, in familiar-group sigmas */\n")
         fh.write(f"#define PROV_LAYER {ax['layer']}\n")

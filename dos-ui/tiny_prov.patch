@@ -6,7 +6,8 @@
 #   1. renames the __TURBOC__ guard to TINY_DOS_UI (3 sites), so the DOS UI
 #      builds with OpenWatcom without touching the compiler's own macros,
 #   2. adds the provenance readout: a 4-layer ensemble of the familiarity
-#      axis + a domain gate (only "capital" questions get a verdict),
+#      axis, combined with the answer confidence (p_top of the first answer
+#      token), plus a domain gate (only "capital" questions get a verdict),
 #   3. includes tc_compat.c into the same translation unit.
 #
 # Three files are NOT in this diff and must sit next to TINY_PROV.C:
@@ -16,8 +17,8 @@
 #
 # Build:  wcl -ml -bt=dos -l=dos -wcd=481 -DTINY_DOS_UI -fe=TINY_PROV.EXE TINY_PROV.C
 --- TINY.C	2026-11-18 00:44:09.865031744 +0100
-+++ TINY_PROV.C	2026-11-18 03:45:11.588953161 +0100
-@@ -145,6 +145,42 @@
++++ TINY_PROV.C	2026-11-18 04:06:12.659639769 +0100
+@@ -145,6 +145,43 @@
  
  /* Work buffers (static, so they do not use the small DOS stack). */
  static float bx[MAXD], bh[MAXD], bq[MAXD], bt[MAXD], ba[MAXD], bm[MAXHID], bs[CTX];
@@ -33,6 +34,7 @@
 +   0.775 leave-one-out accuracy, the 4-layer ensemble 0.950. */
 +static float prov_h[PROV_L][MAXD];
 +static float prov_score;
++static float prov_conf;      /* p_top of the first answer token */
 +static int prov_valid;
 +
 +static void prov_finish(int n, const char *q)
@@ -60,7 +62,7 @@
  static float layer_act[MAXL];               /* how busy each layer was */
  
  static void alloc_memory(void)
-@@ -276,6 +312,10 @@
+@@ -276,6 +313,10 @@
          matvec(&f2[l], bm, bt);
          for (i = 0; i < D; i++)
              bx[i] += bt[i];
@@ -71,15 +73,20 @@
      }
      norm(bx, gf, bh);
      matvec(&emb, bh, score);
-@@ -342,6 +382,7 @@
+@@ -342,7 +383,12 @@
          if (on_step) on_step(p, n);
          step(q[p] - 30, p, score);
      }
-+    prov_finish(n, q);                         /* before the newline */
++    prov_finish(n, q);          /* fam axis: last QUESTION letter state */
      step(1, p++, score);                       /* end of the question */
++    prov_conf = 0.0f;           /* p_top of the first answer token */
++    for (tok = 0; tok < VOCAB; tok++)
++        if (score[tok] > prov_conf)
++            prov_conf = score[tok];
      for (; p < CTX; p++) {
          tok = pick();
-@@ -423,7 +464,7 @@
+         if (tok <= 1) break;                   /* end of the answer */
+@@ -423,7 +469,7 @@
      return 0;
  }
  
@@ -88,7 +95,7 @@
  /* ==================================================================
     The DOS screen: Turbo C conio for text, the PC speaker for sound,
     and on VGA a reprogrammed neon colour palette.
-@@ -431,6 +472,8 @@
+@@ -431,6 +477,8 @@
  #include <conio.h>
  #include <dos.h>
  #include <io.h>
@@ -97,7 +104,7 @@
  
  #define SCRW   80
  #define CHAT_L 3                /* chat window, inside its frame */
-@@ -737,6 +780,7 @@
+@@ -737,6 +785,7 @@
          put_at(MON_X, 4 + l, C_FRAME, buf);
          meter(MON_X + 3, 4 + l, 15, 0, C_ANSWER);
      }
@@ -105,26 +112,26 @@
      put_at(MON_X, 10, C_DIM, "CONFIDENCE");
      meter(MON_X, 11, 13, 0, C_ANSWER);
      put_at(MON_X, 12, C_DIM, "LAST LETTERS");
-@@ -759,6 +803,18 @@
+@@ -759,6 +808,18 @@
          meter(MON_X + 3, 4 + l, 15, v, l % 2 ? C_FRAME : C_ANSWER);
          act_max[l] *= 0.995f;
      }
 +    if (!prov_valid) {
 +        put_at(MON_X, 9, C_DIM, "   --               ");
 +    } else {
-+        if (prov_score > -PROV_MARGIN && prov_score < PROV_MARGIN)
-+            put_at(MON_X, 9, C_DIM, "   --     ");
-+        else if (prov_score > 0.0f)
++        if ((prov_score < -PROV_MARGIN) || (prov_conf < PROV_CONF_LO))
++            put_at(MON_X, 9, C_HOT, "UNBACKED ");
++        else if ((prov_score > PROV_MARGIN) && (prov_conf >= PROV_CONF_HI))
 +            put_at(MON_X, 9, C_ANSWER, "familiar ");
 +        else
-+            put_at(MON_X, 9, C_HOT, "UNBACKED ");
++            put_at(MON_X, 9, C_DIM, "   --     ");
 +        sprintf(buf, "%+6.1f", prov_score);
 +        put_at(MON_X + 10, 9, C_DIM, buf);
 +    }
      v = (int)(last_conf * 1000.0f);
      meter(MON_X, 11, 13, v, v > 800 ? C_ANSWER : v > 500 ? C_QTEXT : C_HOT);
      sprintf(buf, " %3d%%", v / 10);
-@@ -1372,7 +1428,7 @@
+@@ -1372,7 +1433,7 @@
              creativity = argv[i][0] - '0';
          else if (is_word(argv[i], "/p") || is_word(argv[i], "-p"))
              plain = 1;
@@ -133,7 +140,7 @@
          else if (is_word(argv[i], "/demo") || is_word(argv[i], "-demo"))
              demo = 1;
          else if (is_word(argv[i], "/dump"))
-@@ -1388,7 +1444,7 @@
+@@ -1388,7 +1449,7 @@
  #endif
      }
      srand((unsigned)time(NULL));

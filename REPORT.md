@@ -241,3 +241,28 @@ A three-group experiment (20 known / 20 real-but-obscure / 20 invented):
 
 Screenshots: `dos-ui/tests/panel_familiar.png`,
 `panel_unbacked.png`, `panel_gate.png`.
+
+### Two signals, one limit
+
+The familiarity ensemble (4 layers, 0.950) and the **answer confidence** are
+nearly independent (r = 0.35) and combine to **AUROC 0.995** for invented vs
+real entities. The panel now uses both:
+
+```
+UNBACKED  if fam < -0.5 OR p_top(answer) < 0.90
+familiar  if fam >  0.5 AND p_top >= 0.95
+--        otherwise
+```
+
+Measured on 60 entities: 48 answered, accuracy 0.938, 19/20 invented caught,
+3/40 real flagged.
+
+What neither signal does: separate a **known** from an **obscure real** entity.
+`p_truth` (probability of the true first letter) is 1.000 and 0.994
+respectively; the AUROC is 0.69. The model is confident about memorised
+obscure capitals and equally confident about confabulations — there is no
+single-pass "do I know this fact" readout in this model.
+
+On **Gemma 3** the same three-group probe gives a strict ordering
+(K 0.00 / R −5.60 / N −6.92, K vs R = 1.000) at layer 0 — a name-frequency
+gradient, still not a fact check.
