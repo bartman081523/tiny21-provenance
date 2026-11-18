@@ -199,3 +199,23 @@ familiar  +7.8
   real UI: `familiar +5.9` for *estonia* → Tallinn, `UNBACKED −4.6` for
   *vrandel* → "The capital is Pyongyang." at CONFIDENCE 100 %.
   Screenshots: `dos-ui/dos_familiar.png`, `dos-ui/dos_unbacked.png`.
+
+### UI test run (all features)
+
+See `dos-ui/tests/README.md` for the matrix and the screenshots. Covered:
+boot animation, long-question wrapping, scrolling over many turns, F1 help,
+F4 creativity, F3 voice, Esc + screen restore, `/mono`, `/classic`, `/demo`,
+plain mode, and the three panel states (familiar / unbacked / boundary).
+
+Two bugs were found and fixed in the compatibility layer:
+
+1. **Window-relative coordinates.** Turbo C's `gotoxy/wherex/wherey` are
+   relative to the active `window()`; the first build used absolute
+   coordinates and produced overlapping chat lines and shifted labels.
+2. **`delay()` at 55 ms granularity.** The `clock()`-based wait quantised
+   every delay to one BIOS tick, stretching the boot from ~6 s to >16 s.
+   INT 15h AH=86h fixes it.
+
+Verification after the fixes: `BOOT.DMP` 0/2000 cells different from the
+Turbo C build, `SCREEN.DMP` differs only by clock, `rand()` wording, speed
+and the panel; 40/40 answers identical.

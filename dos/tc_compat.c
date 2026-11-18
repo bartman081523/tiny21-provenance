@@ -187,11 +187,19 @@ void puttext(int x1, int y1, int x2, int y2, const void *buf)
         }
 }
 
+/* INT 15h AH=86h waits CX:DX microseconds (AT+). clock() would quantise
+   every delay to the 55 ms BIOS tick, which made the boot and the answer
+   typewriter several times slower than the Turbo C build. */
 void delay(unsigned ms)
 {
-    clock_t t0 = clock();
-    while ((long)((clock() - t0) * 1000L / CLOCKS_PER_SEC) < (long)ms)
-        ;
+    unsigned long us = (unsigned long)ms * 1000UL;
+    union REGS r;
+    if (ms == 0)
+        return;
+    r.h.ah = 0x86;
+    r.x.cx = (unsigned)(us >> 16);
+    r.x.dx = (unsigned)(us & 0xFFFFUL);
+    int86(0x15, &r, &r);
 }
 
 void sound(unsigned hz)

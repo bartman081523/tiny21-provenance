@@ -100,6 +100,13 @@ SCREEN.DMP 63 chars / 43 attrs -- clock, rand() answer wording, speed,
 The boot screen is bit-identical; the only structural difference on the chat
 screen is the panel. A 40-question regression still gives the same 40 answers.
 
+### Timing
+
+`delay()` must not go through `clock()`: the DOS tick is 55 ms, so every
+`delay(12)` in the boot would wait 55 ms and the whole sequence took >16 s.
+`tc_compat.c` now calls **INT 15h AH=86h** (microsecond wait). Boot ≈6 s,
+one answer ≈4.6 s — the same feel as the Turbo C build.
+
 ### Dead zone
 
 Near the decision boundary the panel shows `--` instead of a verdict
