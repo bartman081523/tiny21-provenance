@@ -50,17 +50,16 @@ jobs:
         env:
           OW: ${{ runner.temp }}/ow
         run: ./dos-ui/build.sh
-      - name: check the build
+      - name: stage the artifacts (flat, so the release finds them)
         run: |
-          ls -l dos/TINY_PROV.EXE
-          sha256sum dos/TINY_PROV.EXE | tee TINY_PROV.EXE.sha256
+          mkdir -p dist
+          cp dos/TINY_PROV.EXE dos/PROV.H dist/
+          (cd dist && sha256sum TINY_PROV.EXE > TINY_PROV.EXE.sha256)
+          cat dist/TINY_PROV.EXE.sha256
       - uses: actions/upload-artifact@v4
         with:
           name: TINY_PROV
-          path: |
-            dos/TINY_PROV.EXE
-            dos/PROV.H
-            TINY_PROV.EXE.sha256
+          path: dist
 
   release:
     if: startsWith(github.ref, 'refs/tags/v')
