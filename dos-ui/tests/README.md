@@ -62,3 +62,28 @@ TINY_PROV (OpenWatcom)   119.8 s / 40 answers = 2.99 s each
 ~10 % apart, both "a few seconds" as documented upstream. The difference is
 code generation, not the delay implementation (which was the bug fixed
 earlier: before that fix the watcom build needed >16 s just to boot).
+
+## Precision experiment (60 entities, 3 groups)
+
+| group | asserted | stable | correct |
+| :--- | :--- | :--- | :--- |
+| K known (famous) | 20/20 | 20/20 | 20/20 |
+| R obscure real (Nauru, Palau, ...) | 20/20 | 19/20 | 15/20 |
+| N nonce | 19/20 | 11/20 | 0/20 |
+
+Layer sweep, leave-one-out accuracy:
+
+```
+        K vs N   R vs N   K vs R
+L0      0.775    0.700    0.625
+L1      0.725    0.725    0.650
+L2      0.775    0.850    0.650
+L3      0.700    0.775    0.675
+mean z  0.950    --       --        (K 0.00 / R -0.91 / N -3.32)
+```
+
+`K vs R` near chance is the honest limit: the axis separates *words*, not
+*facts*. The ensemble raises nonce detection from 0.775 to 0.950.
+
+Run: `python provenance/experiment_precision.py` (writes
+`provenance/experiment_precision.json`).

@@ -1,0 +1,520 @@
+{
+ "sweep": {
+  "0": {
+   "K_vs_N": 0.775,
+   "R_vs_N": 0.7,
+   "K_vs_R": 0.625
+  },
+  "1": {
+   "K_vs_N": 0.725,
+   "R_vs_N": 0.725,
+   "K_vs_R": 0.65
+  },
+  "2": {
+   "K_vs_N": 0.775,
+   "R_vs_N": 0.85,
+   "K_vs_R": 0.65
+  },
+  "3": {
+   "K_vs_N": 0.7,
+   "R_vs_N": 0.775,
+   "K_vs_R": 0.675
+  }
+ },
+ "obscure": [
+  {
+   "entity": "nauru",
+   "claims": [
+    "yaren",
+    "yaren",
+    "yaren"
+   ],
+   "texts": [
+    "It is Yaren.",
+    "Yaren.",
+    "The capital is Yaren."
+   ],
+   "claim": "yaren",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "yaren",
+   "correct": true
+  },
+  {
+   "entity": "tuvalu",
+   "claims": [
+    "funafuti",
+    "funafuti",
+    "funafuti"
+   ],
+   "texts": [
+    "Funafuti.",
+    "Funafuti.",
+    "Funafuti."
+   ],
+   "claim": "funafuti",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "funafuti",
+   "correct": true
+  },
+  {
+   "entity": "palau",
+   "claims": [
+    "ngerulmud",
+    "ngerulmud",
+    "ngerulmud"
+   ],
+   "texts": [
+    "Ngerulmud.",
+    "The capital of Palau is Ngerulmud.",
+    "Ngerulmud."
+   ],
+   "claim": "ngerulmud",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "ngerulmud",
+   "correct": true
+  },
+  {
+   "entity": "kiribati",
+   "claims": [
+    "south",
+    "south",
+    "south"
+   ],
+   "texts": [
+    "It is South Tarawa.",
+    "South Tarawa.",
+    "It is South Tarawa."
+   ],
+   "claim": "south",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "south tarawa",
+   "correct": false
+  },
+  {
+   "entity": "comoros",
+   "claims": [
+    "moroni",
+    "moroni",
+    "moroni"
+   ],
+   "texts": [
+    "Moroni.",
+    "Moroni.",
+    "Moroni."
+   ],
+   "claim": "moroni",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "moroni",
+   "correct": true
+  },
+  {
+   "entity": "vanuatu",
+   "claims": [
+    "port",
+    "port",
+    "port"
+   ],
+   "texts": [
+    "It is Port Vila.",
+    "The capital of Vanuatu is Port Vila.",
+    "It is Port Vila."
+   ],
+   "claim": "port",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "port vila",
+   "correct": false
+  },
+  {
+   "entity": "lesotho",
+   "claims": [
+    "maseru",
+    "maseru",
+    "maseru"
+   ],
+   "texts": [
+    "The capital of Lesotho is Maseru.",
+    "The capital of Lesotho is Maseru.",
+    "The capital is Maseru."
+   ],
+   "claim": "maseru",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "maseru",
+   "correct": true
+  },
+  {
+   "entity": "bhutan",
+   "claims": [
+    "thimphu",
+    "thimphu",
+    "thimphu"
+   ],
+   "texts": [
+    "Thimphu.",
+    "Thimphu.",
+    "Thimphu."
+   ],
+   "claim": "thimphu",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "thimphu",
+   "correct": true
+  },
+  {
+   "entity": "maldives",
+   "claims": [
+    "male",
+    "male",
+    "male"
+   ],
+   "texts": [
+    "The capital is Male.",
+    "The capital is Male.",
+    "The capital is Male."
+   ],
+   "claim": "male",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "male",
+   "correct": true
+  },
+  {
+   "entity": "seychelles",
+   "claims": [
+    "victoria",
+    "victoria",
+    "victoria"
+   ],
+   "texts": [
+    "The capital is Victoria.",
+    "The capital of Seychelles is Victoria.",
+    "The capital is Victoria."
+   ],
+   "claim": "victoria",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "victoria",
+   "correct": true
+  },
+  {
+   "entity": "barbados",
+   "claims": [
+    "bridgetown",
+    "bridgetown",
+    "bridgetown"
+   ],
+   "texts": [
+    "It is Bridgetown.",
+    "It is Bridgetown.",
+    "It is Bridgetown."
+   ],
+   "claim": "bridgetown",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "bridgetown",
+   "correct": true
+  },
+  {
+   "entity": "grenada",
+   "claims": [
+    "st",
+    "st",
+    "st"
+   ],
+   "texts": [
+    "It is St. George's.",
+    "It is St. George's.",
+    "It is St. George's."
+   ],
+   "claim": "st",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "st georges",
+   "correct": false
+  },
+  {
+   "entity": "dominica",
+   "claims": [
+    "roseau",
+    "roseau",
+    "roseau"
+   ],
+   "texts": [
+    "Roseau.",
+    "The capital is Roseau.",
+    "Roseau."
+   ],
+   "claim": "roseau",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "roseau",
+   "correct": true
+  },
+  {
+   "entity": "saint lucia",
+   "claims": [
+    "castries",
+    "castries",
+    "castries"
+   ],
+   "texts": [
+    "Castries.",
+    "The capital is Castries.",
+    "The capital is Castries."
+   ],
+   "claim": "castries",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "castries",
+   "correct": true
+  },
+  {
+   "entity": "belize",
+   "claims": [
+    "belmopan",
+    "belmopan",
+    "belmopan"
+   ],
+   "texts": [
+    "Belmopan.",
+    "Belmopan.",
+    "Belmopan."
+   ],
+   "claim": "belmopan",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "belmopan",
+   "correct": true
+  },
+  {
+   "entity": "suriname",
+   "claims": [
+    "paramaribo",
+    "paramaribo",
+    "paramaribo"
+   ],
+   "texts": [
+    "The capital of Suriname is Paramaribo.",
+    "The capital of Suriname is Paramaribo.",
+    "The capital is Paramaribo."
+   ],
+   "claim": "paramaribo",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "paramaribo",
+   "correct": true
+  },
+  {
+   "entity": "guyana",
+   "claims": [
+    "georgetown",
+    "georgetown",
+    "georgetown"
+   ],
+   "texts": [
+    "The capital is Georgetown.",
+    "The capital of Guyana is Georgetown.",
+    "The capital is Georgetown."
+   ],
+   "claim": "georgetown",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "georgetown",
+   "correct": true
+  },
+  {
+   "entity": "sao tome and principe",
+   "claims": [
+    null,
+    null,
+    "sao"
+   ],
+   "texts": [
+    "The capital of Sao Tome and Principe is ",
+    "The capital of Sao Tome and Principe is ",
+    "The capital is Sao Tome."
+   ],
+   "claim": "sao",
+   "stability": 0.3333333333333333,
+   "asserted": true,
+   "H": 1.0,
+   "truth": "sao tome",
+   "correct": false
+  },
+  {
+   "entity": "eswatini",
+   "claims": [
+    "lobamba",
+    "lobamba",
+    "lobamba"
+   ],
+   "texts": [
+    "It is Lobamba.",
+    "It is Lobamba.",
+    "It is Lobamba."
+   ],
+   "claim": "lobamba",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "lobamba",
+   "correct": true
+  },
+  {
+   "entity": "antigua and barbuda",
+   "claims": [
+    "saint",
+    "saint",
+    "saint"
+   ],
+   "texts": [
+    "Saint John's.",
+    "Saint John's.",
+    "Saint John's."
+   ],
+   "claim": "saint",
+   "stability": 1.0,
+   "asserted": true,
+   "H": 0.0,
+   "truth": "saint johns",
+   "correct": false
+  }
+ ],
+ "labels": {
+  "france": true,
+  "germany": true,
+  "japan": true,
+  "italy": true,
+  "spain": true,
+  "portugal": true,
+  "austria": true,
+  "greece": true,
+  "norway": true,
+  "sweden": true,
+  "poland": true,
+  "hungary": true,
+  "ireland": true,
+  "egypt": true,
+  "canada": true,
+  "brazil": true,
+  "kenya": true,
+  "russia": true,
+  "china": true,
+  "cuba": true,
+  "nauru": true,
+  "tuvalu": true,
+  "palau": true,
+  "kiribati": false,
+  "comoros": true,
+  "vanuatu": false,
+  "lesotho": true,
+  "bhutan": true,
+  "maldives": true,
+  "seychelles": true,
+  "barbados": true,
+  "grenada": false,
+  "dominica": true,
+  "saint lucia": true,
+  "belize": true,
+  "suriname": true,
+  "guyana": true,
+  "sao tome and principe": false,
+  "eswatini": true,
+  "antigua and barbuda": false,
+  "vrandel": false,
+  "qorvath": false,
+  "zelmuth": false,
+  "brixalon": false,
+  "tavrenko": false,
+  "oxwald": false,
+  "mireth": false,
+  "kalvun": false,
+  "draneth": false,
+  "sovril": false,
+  "kalthen": false,
+  "brumire": false,
+  "vasquin": false,
+  "nordrel": false,
+  "pelvath": false,
+  "grimsel": false,
+  "torvane": false,
+  "heskril": false,
+  "ondram": false,
+  "weltris": false
+ },
+ "group_means": {
+  "K": [
+   -0.052679434418678284,
+   -0.04707513377070427,
+   0.04553186893463135,
+   0.0013453811407089233
+  ],
+  "R": [
+   -0.042332712560892105,
+   0.07527957111597061,
+   0.057299692183732986,
+   0.05522390082478523
+  ],
+  "N": [
+   0.007087185047566891,
+   0.030950773507356644,
+   0.062275271862745285,
+   0.0352691188454628
+  ]
+ },
+ "margin_bins": [
+  [
+   0,
+   1,
+   10,
+   6
+  ],
+  [
+   1,
+   2,
+   4,
+   3
+  ],
+  [
+   2,
+   4,
+   16,
+   10
+  ],
+  [
+   4,
+   8,
+   21,
+   13
+  ],
+  [
+   8,
+   1000000000.0,
+   9,
+   3
+  ]
+ ]
+}

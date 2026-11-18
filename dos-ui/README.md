@@ -119,3 +119,41 @@ Near the decision boundary the panel shows `--` instead of a verdict
 (`PROV_MARGIN 1.0` in `PROV.H`): a spelling question like *"spell computer"*
 scores −0.3, which is not an unbacked country claim, just outside the axis'
 domain. Screenshot: `dos_boundary.png`.
+
+## Precision work: ensemble, gate, margin
+
+A three-group experiment (20 known countries, 20 real-but-obscure, 20
+invented) showed two things:
+
+1. **The axis is mostly lexical.** Known vs obscure-real separates only
+   **0.63–0.68** leave-one-out: both are real words. It answers "is this a
+   known name", not "do I know the fact". Nonce names are what it really
+   detects.
+2. **A four-layer ensemble is much better than one layer.** Single layer 0:
+   K vs N **0.775**. Mean of the four standardised layer projections:
+   **0.950**. Mean z-scores: familiar **0.00**, obscure-real **−0.91**,
+   nonce **−3.32** — a graded signal, not a binary one.
+
+The shipped panel therefore uses the ensemble (`PROV_DIR[4][96]`,
+`PROV_MEAN`, `PROV_STD`, `PROV_THR_Z`), not the single direction.
+
+**Domain gate.** "spell computer" sits near the familiar centroid and would
+read `familiar`, which says nothing about the answer. The verdict is only
+shown for prompts containing `capital`; everything else shows `--`.
+
+**Dead zone from data.** Accuracy vs coverage over the 60 entities:
+
+| margin | calls | accuracy | coverage | familiar rejected |
+| :--- | :--- | :--- | :--- | :--- |
+| 0.00 | 60 | 0.783 | 100 % | 0/20 |
+| 0.25 | 54 | 0.833 | 90 % | 1/20 |
+| **0.50** | **46** | **0.891** | **77 %** | **2/20** |
+| 0.75 | 42 | 0.881 | 70 % | 3/20 |
+| 1.00 | 35 | 0.914 | 58 % | 6/20 |
+| 2.00 | 16 | 0.938 | 27 % | 13/20 |
+
+`PROV_MARGIN 0.50` is the operating point: ~0.89 accuracy at ~77 % coverage
+on this set.
+
+Screenshots: `tests/panel_familiar.png` (+2.1), `tests/panel_unbacked.png`
+(−1.4), `tests/panel_gate.png` (`--`).

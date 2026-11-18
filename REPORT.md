@@ -219,3 +219,25 @@ Two bugs were found and fixed in the compatibility layer:
 Verification after the fixes: `BOOT.DMP` 0/2000 cells different from the
 Turbo C build, `SCREEN.DMP` differs only by clock, `rand()` wording, speed
 and the panel; 40/40 answers identical.
+
+### Precision: ensemble, domain gate, margin (60 entities)
+
+A three-group experiment (20 known / 20 real-but-obscure / 20 invented):
+
+| group | asserted | stable | correct |
+| :--- | :--- | :--- | :--- |
+| known | 20/20 | 20/20 | 20/20 |
+| obscure real | 20/20 | 19/20 | 15/20 |
+| invented | 19/20 | 11/20 | 0/20 |
+
+- **The axis is lexical**: known vs obscure-real separates only 0.63–0.68 —
+  both are real words. It reads "known name", not "known fact".
+- **A 4-layer ensemble** raises known-vs-invented from **0.775** (layer 0)
+  to **0.950**. Mean z: familiar 0.00, obscure-real −0.91, invented −3.32.
+- **Domain gate**: only `capital` questions get a verdict; a spelling prompt
+  lands near the familiar centroid and would otherwise read `familiar`.
+- **Dead zone from data**: margin 0.50 gives 0.891 accuracy at 77 % coverage
+  (0.00 → 0.783 at 100 %, 1.00 → 0.914 at 58 %).
+
+Screenshots: `dos-ui/tests/panel_familiar.png`,
+`panel_unbacked.png`, `panel_gate.png`.
