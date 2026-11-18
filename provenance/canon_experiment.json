@@ -1,0 +1,11 @@
+{
+ "note": "5-minute finetune with a canonical answer format (training/train_canon.py)",
+ "shipped_free_decode": {"correct": 153, "n": 194, "refusals": 1,
+                         "comment": "long templates truncate at 30 chars; the routed decode is 194/194"},
+ "shipped_with_router": {"correct": 194, "n": 194, "refusals": 0},
+ "canon_finetune": {"correct": 190, "n": 194, "refusals": 0,
+                    "broken_facts": [["cyprus","Nicosia","Nickolmon"],
+                                     ["djibouti","Djibouti","Dodoma"],
+                                     ["sri lanka","Colombo","Colotbo"],
+                                     ["myanmar","Naypyidaw","Nayingfield"]]}
+}

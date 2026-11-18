@@ -125,3 +125,32 @@ Poland and Qatar now answer Warsaw / Doha in the GUI.
 This is a **decoding** fix, not a model fix. The training-side repair (one
 canonical answer prefix, a fallback that starts with a distinct token) is
 still the right long-term change; it needs a retrain and is documented above.
+
+## Training-side experiment: canonical answer format
+
+`training/train_canon.py` finetunes the shipped checkpoint for 5 minutes on a
+corpus where every table relation answers with the bare value (`"{a}."`) and
+the fallback starts with a distinct token (`"Sorry, …"`). The model and the
+trainer are untouched; only the *distribution* changes.
+
+| model | free decode (no router) | refusals |
+| :--- | :--- | :--- |
+| shipped | 153/194 (long templates truncate at 30 chars) | 1 |
+| shipped + router | **194/194** | 0 |
+| canon, 5 min finetune | 190/194 | **0** |
+
+The prediction holds: the canonical format removes the refusal mechanism —
+the `I` branch no longer carries two meanings. The short finetune costs four
+rare facts, which it overwrites with confabulations:
+
+```
+cyprus    Nicosia  -> Nickolmon
+djibouti  Djibouti -> Dodoma
+sri lanka Colombo  -> Colotbo
+myanmar   Naypyidaw-> Nayingfield
+```
+
+A full retrain with the canonical format (or a longer, lower-LR finetune) is
+the production path; until then the router is the cheaper fix and is what the
+build ships. `canon.pt` is reproducible with
+`python3 training/train_canon.py 5 canon.pt` and is not committed.
