@@ -55,12 +55,15 @@ their own licences (ODbL and CC BY-SA); see `DATA_LICENSES.md`.
 
 `provenance/` contains the read-only provenance work: three axes, the
 hallucination audit, the one-pass indicator and the accuracy experiments.
-The measurement maths lives in the sibling package
-[`provenance-audit`](https://github.com/bartman081523/provenance-audit):
+The measurement maths lives in a **separate repository/package**,
+[`provenance-audit`](https://github.com/bartman081523/provenance-audit) —
+this repo depends on it as a normal package, not on a sibling path:
 
 ```bash
-pip install "git+https://github.com/bartman081523/provenance-audit.git"
-python -m pytest tests -q
+# torch first (CPU wheel in CI), then the declared dev dependencies
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements-dev.txt
+python -m pytest tests -q      # no PYTHONPATH needed
 ```
 
 The DOS build, the router fix and the diagnosis are documented in

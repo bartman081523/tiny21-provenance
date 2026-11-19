@@ -1,0 +1,12 @@
+# Development / test environment for the provenance tooling.
+#
+# torch is intentionally NOT pinned here: the CI installs the CPU wheel
+# separately, and a GPU box may want its own build. Install it first, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# provenance-audit is a real dependency (a package), not a sibling checkout:
+#   pip install -r requirements-dev.txt
+# then `python -m pytest tests -q` works without any PYTHONPATH.
+numpy>=1.23
+pytest
+provenance-audit @ git+https://github.com/bartman081523/provenance-audit.git
