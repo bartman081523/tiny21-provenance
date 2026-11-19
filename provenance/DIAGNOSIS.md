@@ -197,3 +197,26 @@ Practical rule: run at creativity 0 for the best answers; sample at c ≥ 5 only
 when the question is *whether* an answer is backed (audit), never to "reduce"
 hallucination. What controls confabulation is coverage in training and the
 provenance indicator — not the temperature.
+
+## Shipped: v2 (canonical format, 20-minute finetune)
+
+`training/train_v2.py` (same patch as the 5-minute experiment, but 20 minutes
+at a low, strongly decaying learning rate) produced the new shipped weights:
+
+| | v1 (shipped before) | **v2 (now)** |
+| :--- | :--- | :--- |
+| free decode, 194 capitals | 153/194 + 1 refusal (long templates truncate) | **191/194, 0 refusals** |
+| free decode, relations | 16/16 | 15/16 |
+| with router, capitals | 194/194 | **194/194** |
+| with router, relations | 16/16 | **16/16** |
+| answer format | 3 templates + fallback on `I` | bare value + `Sorry, …` |
+
+Three facts drift in the free decode (andorra → "Andorran.", bulgaria →
+"Sofile.", north korea → "Penh."); with the router the battery is 194/194
+again. The important change is structural: the `I` collision is gone, so a
+decoder that does **not** use the router no longer refuses a known capital.
+
+The panel was recalibrated on the new weights (familiarity ensemble 0.950,
+threshold −1.710, margin 0.50). DOS check: 40-question run 20/20 real
+capitals; GUI: `poland → Warsaw. familiar +1.5`, `vrandel → Prague.
+UNBACKED −1.2`.

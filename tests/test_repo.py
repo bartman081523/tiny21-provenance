@@ -89,14 +89,14 @@ def test_routed_capital_answers(quant):
         assert not r["fallback"], (country, r["text"])
 
 
-def test_fallback_repaired(quant):
-    from provenance.router import answer
-    r = answer(quant, "what is the capital of poland", repair=True)
-    assert not r["fallback"] and "warsaw" in r["value"].lower()
-    # the free decode of that question is the refusal -- the router is what
-    # turns it into an answer
+def test_free_decode_no_longer_refuses(quant):
+    """v2 (canonical format, distinct fallback) answers without the router."""
     free = quant.generate("what is the capital of poland\n", 40)[1]
-    assert is_fallback(free)
+    assert not is_fallback(free), free
+    assert "warsaw" in free.lower()
+    for name in ("qatar", "france"):
+        t = quant.generate(f"what is the capital of {name}\n", 40)[1]
+        assert not is_fallback(t), (name, t)
 
 
 def test_nonce_is_flagged_by_familiarity(quant):

@@ -279,3 +279,16 @@ for all 194 countries. Other relations keep the free decode.
 - 40-question DOS run: **20/20** real countries, nonces still confabulate and
   are flagged by the panel
 - the free decode of `… poland` still refuses — the router is what fixes it
+
+### v2: the shipped upgrade
+
+Canonical answer format + distinct fallback, 20-minute low-LR finetune from
+the v1 weights. Free decode: **191/194 capitals, 0 refusals**; with the
+router 194/194 and 16/16 relations. Three facts drift in the free path
+(andorra, bulgaria, north korea). The panel was recalibrated on the new
+weights; the DOS build and the 40-question run are green.
+
+This is the answer to "how do we upgrade": the DOS size budget forbids more
+parameters (4×96 ≈ 380 KB quantised is the ceiling), so the upgrade is the
+*data distribution* — one answer format, a fallback that cannot collide with
+it, and enough training to keep the memorised facts.

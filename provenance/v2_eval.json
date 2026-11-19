@@ -1,0 +1,11 @@
+{
+ "model": "v2 (canonical answer format, distinct fallback, 20-min low-LR finetune from tiny2.pt)",
+ "free_decode": {"correct": 191, "n": 194, "refusals": 0,
+                 "drifted": [["andorra","Andorran."],["bulgaria","Sofile."],["north korea","Penh."]]},
+ "with_router": {"correct": 194, "n": 194, "relations": "16/16"},
+ "relations_free": "15/16",
+ "nonces": "8/8 confabulate (flagged by the panel)",
+ "dos_40_question_run": "20/20 real capitals",
+ "panel": {"familiarity_ensemble_acc": 0.950, "threshold_z": -1.710, "margin": 0.50},
+ "gui_check": ["poland -> Warsaw. familiar +1.5", "vrandel -> Prague. UNBACKED -1.2"]
+}
