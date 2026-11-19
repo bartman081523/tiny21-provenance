@@ -154,3 +154,46 @@ A full retrain with the canonical format (or a longer, lower-LR finetune) is
 the production path; until then the router is the cheaper fix and is what the
 build ships. `training/canon.pt` is committed as the experiment artifact (1.4 MB) and
 is reproducible with `python3 training/train_canon.py 5 canon.pt`.
+
+## Does creativity control confabulation? No.
+
+`pick()` in `TINY.C`: creativity 0 returns the argmax; creativity > 0 samples
+from a softmax with temperature `c/5` (and drops letters below 0.15 of the
+best). It is a **sampling** knob, not a knowledge knob.
+
+Measured with the same sampler in Python (`provenance/experiment_creativity.py`,
+6 real capitals × 5 samples and 6 invented entities × 5 samples per level):
+
+| creativity | real capitals correct | nonces confabulating | distinct claims per nonce |
+| :--- | :--- | :--- | :--- |
+| 0 | 30/30 | **30/30** | **1.0** |
+| 2 | 30/30 | 30/30 | 1.3 |
+| 5 | 30/30 | 30/30 | 2.2 |
+| 9 | 30/30 | 30/30 | 3.0 |
+
+At creativity 0 the model is *deterministic*, not *truthful*: an unknown
+entity gets its single most likely capital, always the same one —
+
+```
+vrandel  -> Pyongyang.  (5/5)
+qorvath  -> Lobamba.    (5/5)
+zelmuth  -> Brussels.   (5/5)
+```
+
+At creativity 9 the same entities still confabulate (30/30), but the claims
+vary (`Pyongyang`, `N'Djamena`, `Prague`, …). Creativity changes the
+**stability** of the error, not its presence.
+
+Two consequences:
+
+1. **The audit's blind spot is a creativity-0 artefact.** A stability audit
+   cannot see a confabulation that never varies. Sampling at c ≥ 5 makes the
+   same error visible — creativity is a *test instrument*, not a fix.
+2. **Routed decoding is robust under sampling.** The real capitals stay
+   30/30 correct even at creativity 9, because the routed answer letter has
+   p ≈ 0.99: the temperature never reaches the alternatives.
+
+Practical rule: run at creativity 0 for the best answers; sample at c ≥ 5 only
+when the question is *whether* an answer is backed (audit), never to "reduce"
+hallucination. What controls confabulation is coverage in training and the
+provenance indicator — not the temperature.

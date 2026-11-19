@@ -1,0 +1,38 @@
+{
+ "0": {
+  "real_first_correct": 6,
+  "real_samples_correct": 30,
+  "real_samples": 30,
+  "nonce_confabulated": 30,
+  "nonce_samples": 30,
+  "nonce_distinct_per_entity": 1.0,
+  "real_distinct_per_entity": 1.0
+ },
+ "2": {
+  "real_first_correct": 6,
+  "real_samples_correct": 30,
+  "real_samples": 30,
+  "nonce_confabulated": 30,
+  "nonce_samples": 30,
+  "nonce_distinct_per_entity": 1.3333333333333333,
+  "real_distinct_per_entity": 1.0
+ },
+ "5": {
+  "real_first_correct": 6,
+  "real_samples_correct": 30,
+  "real_samples": 30,
+  "nonce_confabulated": 30,
+  "nonce_samples": 30,
+  "nonce_distinct_per_entity": 2.1666666666666665,
+  "real_distinct_per_entity": 1.0
+ },
+ "9": {
+  "real_first_correct": 6,
+  "real_samples_correct": 30,
+  "real_samples": 30,
+  "nonce_confabulated": 30,
+  "nonce_samples": 30,
+  "nonce_distinct_per_entity": 3.0,
+  "real_distinct_per_entity": 1.0
+ }
+}
