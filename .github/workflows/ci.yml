@@ -46,19 +46,19 @@ jobs:
           curl -sSL -o "$RUNNER_TEMP/ow.tar.xz" \
             "https://github.com/open-watcom/open-watcom-v2/releases/download/Last-CI-build/ow-snapshot.tar.xz"
           tar -xf "$RUNNER_TEMP/ow.tar.xz" -C "$RUNNER_TEMP/ow"
-      - name: build TINY_PROV.EXE
+      - name: build TINY.EXE
         env:
           OW: ${{ runner.temp }}/ow
         run: ./dos-ui/build.sh
       - name: stage the artifacts (flat, so the release finds them)
         run: |
           mkdir -p dist
-          cp dos/TINY_PROV.EXE dos/PROV.H dist/
-          (cd dist && sha256sum TINY_PROV.EXE > TINY_PROV.EXE.sha256)
-          cat dist/TINY_PROV.EXE.sha256
+          cp dos/TINY.EXE dos/TINY.BIN dos/PROV.H dist/
+          (cd dist && sha256sum TINY.EXE > TINY.EXE.sha256)
+          cat dist/TINY.EXE.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: TINY_PROV
+          name: TINY
           path: dist
 
   release:
@@ -68,12 +68,13 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: TINY_PROV
+          name: TINY
           path: dist
       - uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/TINY_PROV.EXE
+            dist/TINY.EXE
+            dist/TINY.BIN
             dist/PROV.H
-            dist/TINY_PROV.EXE.sha256
+            dist/TINY.EXE.sha256
           generate_release_notes: true

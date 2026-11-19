@@ -1,7 +1,7 @@
 # DOS UI test run
 
 Everything below was executed in the emulator (QEMU + FreeDOS 1.3) against
-the built `TINY_PROV.EXE`. Screenshots are the emulator's own frame buffer
+the built `TINY.EXE`. Screenshots are the emulator's own frame buffer
 (`screendump`), not a reconstruction.
 
 | # | feature | action | result | shot |
@@ -17,7 +17,7 @@ the built `TINY_PROV.EXE`. Screenshots are the emulator's own frame buffer
 | 9 | `/mono` | restart with flag | greyscale UI, panel works (`familiar +6.7`) | `mode_mono.png` |
 | 10 | `/classic` | restart with flag | standard DOS palette | `mode_classic.png` |
 | 11 | `/demo` | start | asks itself, panel updates | earlier shots |
-| 12 | plain mode | `tinyprov 0 /p < q40.txt` | 40/40 answers, identical to Turbo C | — |
+| 12 | plain mode | `tiny 0 /p < q40.txt` | 40/40 answers, identical to Turbo C | — |
 | 13 | panel: familiar | *capital of peru* | `familiar +6.7` | `live_familiar.png` |
 | 14 | panel: unbacked | *capital of vrandel* | `UNBACKED −4.6`, CONFIDENCE 100 % | `../dos_unbacked.png` |
 | 15 | panel: boundary | *spell computer* | `--` (dead zone), −0.3 | `../dos_boundary.png` |
@@ -56,7 +56,7 @@ monitor; note that QEMU names the keys `slash`, `dot`, `minus`, `spc`, `ret`
 
 ```
 TINY      (Turbo C 2.0)  133.6 s / 40 answers = 3.34 s each
-TINY_PROV (OpenWatcom)   119.8 s / 40 answers = 2.99 s each
+TINY (OpenWatcom)   119.8 s / 40 answers = 2.99 s each
 ```
 
 ~10 % apart, both "a few seconds" as documented upstream. The difference is

@@ -64,5 +64,5 @@ python -m pytest tests -q
 ```
 
 The DOS build, the router fix and the diagnosis are documented in
-`provenance/DIAGNOSIS.md`; the CI builds `TINY_PROV.EXE` with OpenWatcom and
+`provenance/DIAGNOSIS.md`; the CI builds `TINY.EXE` with OpenWatcom and
 publishes it on a `v*` tag.

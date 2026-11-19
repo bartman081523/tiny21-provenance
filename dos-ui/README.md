@@ -26,10 +26,10 @@ OpenWatcom v2 cross-compiles it on Linux, 16-bit DOS target:
 ```bash
 curl -LO https://github.com/open-watcom/open-watcom-v2/releases/download/Last-CI-build/ow-snapshot.tar.xz
 tar -xf ow-snapshot.tar.xz -C /opt/ow        # 683 MB extracted
-OW=/opt/ow ./build.sh                        # -> dos/TINY_PROV.EXE (0 warnings)
+OW=/opt/ow ./build.sh                        # -> dos/TINY.EXE (0 warnings)
 ```
 
-The shipped binary is already in `../dos/TINY_PROV.EXE` (68 KB, DOS real
+The shipped binary is already in `../dos/TINY.EXE` (68 KB, DOS real
 mode, same model as upstream).
 
 ### What made the port work
@@ -50,7 +50,7 @@ OpenWatcom has none of the Turbo text API. Two small additions:
 - `-wcd=481` silences one cosmetic warning: TINY.C uses Turbo C's
   `struct time`, which shadows the C library function `time()`.
 
-`tiny_prov.patch` carries all source changes (guard rename, panel, compat
+`provenance.patch` carries all source changes (guard rename, panel, compat
 include). `PROV.H`, `tc_compat.h` and `tc_compat.c` are added files and are
 not part of the diff; the patch header says so.
 
@@ -64,11 +64,11 @@ and (screenshots above) in the full-screen UI.
 | :--- | :--- |
 | `export_prov.py` | fits the axis on `dos/TINY.BIN`, writes `PROV.H` |
 | `PROV.H` | direction (96 floats), threshold, layer, width guard |
-| `tiny_prov.patch` | unified diff against `dos/TINY.C` |
+| `provenance.patch` | unified diff against `dos/TINY.C` |
 | `build.sh` | OpenWatcom build |
 | `prov_calibration.json` | accuracy, p-value, threshold |
-| `../dos/TINY_PROV.C` | patched source (includes `tc_compat.c`) |
-| `../dos/TINY_PROV.EXE` | built binary |
+| `../dos/TINY.C` | patched source (includes `tc_compat.c`) |
+| `../dos/TINY.EXE` | built binary |
 | `../dos/tc_compat.c|h` | Turbo C compatibility layer |
 
 ## Numbers (fitted on the shipped weights)

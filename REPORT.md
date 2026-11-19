@@ -186,15 +186,15 @@ familiar  +7.8
   `TINY.BIN` (via a `TNY2` loader), not on the float checkpoint: layer 0,
   LOO 0.775, permutation p 0.002, threshold −0.785, 18/20 real and 19/20
   invented on the training cells.
-- `dos/TINY_PROV.C` + `dos/PROV.H` are ready to build:
-  `TCC -ml TINY_PROV.C` (Turbo C 2.0, as upstream).
+- `dos/TINY.C` + `dos/PROV.H` are ready to build:
+  `TCC -ml TINY.C` (Turbo C 2.0, as upstream).
 - **Compiled and verified.** No Turbo C was needed: OpenWatcom v2
   cross-compiles the 16-bit DOS target on Linux (`dos-ui/build.sh`). The
   whole full-screen UI is guarded by `#ifdef __TURBOC__` and Watcom has no
   Turbo text API, so `dos/tc_compat.[ch]` supplies it on the VGA buffer
   (putch/cputs/cprintf/gotoxy/window/textattr/textmode/clrscr/gettextinfo/
   gettime/gettext/sound/delay) and the guard is renamed to `TINY_DOS_UI`.
-- The rebuilt `TINY_PROV.EXE` answers the same 40 questions with the same 40
+- The rebuilt `TINY.EXE` answers the same 40 questions with the same 40
   answers as the Turbo C build (empty `diff`), and the panel is live in the
   real UI: `familiar +5.9` for *estonia* → Tallinn, `UNBACKED −4.6` for
   *vrandel* → "The capital is Pyongyang." at CONFIDENCE 100 %.

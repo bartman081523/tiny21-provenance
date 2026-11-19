@@ -2,7 +2,7 @@
  *
  * Writes through the VGA text buffer at B800:0000 (fast, exact attributes),
  * uses INT 10h for scroll/clear/mode, the PIT for the speaker, and keeps the
- * window/cursor state the way Turbo C exposes it. Only used by TINY_PROV.
+ * window/cursor state the way Turbo C exposes it. Only used by TINY.
  */
 #include <i86.h>
 #include <stdarg.h>

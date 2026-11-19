@@ -118,7 +118,7 @@ Measured after the change:
 | 16 relation questions | 16/16 | 16/16 |
 | 40-question DOS run, real countries | 19/20 | **20/20** |
 
-The same router is in the DOS app (`route_suffix()` in `TINY_PROV.C`): the
+The same router is in the DOS app (`route_suffix()` in `TINY.C`): the
 capital question is decoded with the template, everything else as before.
 Poland and Qatar now answer Warsaw / Doha in the GUI.
 

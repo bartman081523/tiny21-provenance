@@ -49,7 +49,7 @@ def test_value_of_strips_all_templates():
 
 # ---------------------------------------------------------------- weights ---
 def test_weights_present():
-    for p in ("dos/TINY.BIN", "dos/TINY_PROV.EXE", "training/tiny2.pt"):
+    for p in ("dos/TINY.BIN", "dos/TINY.EXE", "training/tiny2.pt"):
         assert os.path.getsize(os.path.join(ROOT, p)) > 1000, p
 
 
